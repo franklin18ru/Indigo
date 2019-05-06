@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'IndigoFasteignir.urls'
+ROOT_URLCONF = 'Indigo.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'IndigoFasteignir.wsgi.application'
+WSGI_APPLICATION = 'Indigo.wsgi.application'
 
 
 # Database
