@@ -9,6 +9,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-inverse navbar-custom font-weight-bold">
@@ -44,36 +45,36 @@
     </div>
     <div class="col-6">
       <h2 class="header">FINNDU ÞÍNA DRAUMA EIGN</h2>
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-6">
                 <div class="dropdown">
                       <button class="btn dropdown-toggle searchButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Svæði
                       </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <div class="dropdown-menu searchButton" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#">Future Generated</a>
                       </div>
                 </div>
             </div>
-                <div class="col">
-                    <div class="col">
-                    <div class="dropdown">
-                      <button class="btn dropdown-toggle searchButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Verð frá
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Future Generated</a>
-                      </div>
+                <div class="col-6">
+                    <div class="col-md-6 price">
+                        <div class="dropdown">
+                              <button class="btn dropdown-toggle searchButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Verð frá
+                              </button>
+                              <div class="dropdown-menu searchButton" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Future Generated</a>
+                              </div>
+                        </div>
                     </div>
-                    </div>
-                    <div class="col">
-                    <div class="dropdown">
-                      <button class="btn dropdown-toggle searchButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Verð til
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Future Generated</a>
-                      </div>
+                    <div class="col-md-6 price">
+                        <div class="dropdown">
+                        <button class="btn dropdown-toggle searchButton rightButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Verð til
+                        </button>
+                        <div class="dropdown-menu searchButton" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Future Generated</a>
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -82,7 +83,66 @@
     <div class="col">
     </div>
   </div>
-</div>
+  <div class="row mt-4">
+    <div class="col">
+    </div>
+    <div class="col-6">
+        <div class="row">
+            <div class="col-6">
+                <div class="dropdown">
+                      <button class="btn dropdown-toggle searchButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Tegund
+                      </button>
+                      <div class="dropdown-menu searchButton" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Future Generated</a>
+                      </div>
+                </div>
+            </div>
+                <div class="col-6">
+                    <div class="col-md-6 price">
+                        <div class="dropdown">
+                              <button class="btn dropdown-toggle searchButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Stærð frá
+                              </button>
+                              <div class="dropdown-menu searchButton" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Future Generated</a>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 price">
+                        <div class="dropdown">
+                        <button class="btn dropdown-toggle searchButton rightButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Stærð til
+                        </button>
+                        <div class="dropdown-menu searchButton" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Future Generated</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col">
+    </div>
+    <div class="col-6">
+        <div class="row">
+            <div class="col">
+                <div class="input-group md-form form-sm form-2 pl-0">
+                  <input class="form-control searchType" type="text" placeholder="Leita eftir götuheiti..." aria-label="Leita eftir götuheiti">
+                  <button type="button" class="btn searchIcon">
+                    <i class="fas fa-search text-grey" aria-hidden="true"></i>
+                  </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col">
+    </div>
 
 
 </body>

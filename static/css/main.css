@@ -66,5 +66,29 @@ body {
 
 .searchButton{
     width:100%;
-    background-color:white;
+    background-color:#EAEAEA;
+    text-align:left;
+    color:#42393D;
+}
+
+.searchType{
+    background-color:#EAEAEA;
+    color:#42393D;
+    float:left;
+}
+.searchIcon{
+    background-color:#EAEAEA;
+    color:#42393D;
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius:0 !important;
+}
+
+
+.price {
+    float:left;
+    padding-right:0;
+}
+
+.rightButton{
+    float:right;
 }
