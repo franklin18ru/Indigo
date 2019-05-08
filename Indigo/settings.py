@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'realtor.apps.RealtorConfig',
     'property.apps.PropertyConfig',
+    'userProfile.apps.UserprofileConfig'
 ]
 
 MIDDLEWARE = [

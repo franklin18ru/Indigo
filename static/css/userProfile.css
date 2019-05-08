@@ -1,0 +1,92 @@
+body {
+  background: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.navbar-custom {
+    background-color: #505666;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255,.8);
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,1);
+}
+
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #198C94;
+}
+
+/* for dropdown only - change the color of droodown */
+.navbar-custom .dropdown-menu {
+    background-color: #ff5500;
+}
+.navbar-custom .dropdown-item {
+    color: #ffffff;
+}
+.navbar-custom .dropdown-item:hover,
+.navbar-custom .dropdown-item:focus {
+    color: #333333;
+    background-color: rgba(255,255,255,.5);
+}
+
+
+.icon{
+    font-size: 40px;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.userText{
+    text-align: left;
+    padding: 0px;
+    margin: 0.5rem;
+    margin-left:0;
+    float:left;
+}
+.userInfo{
+    color: #5a5a5a;
+    border-style: solid;
+    border-radius: 0.5em;
+    border-color: #5a5a5a;
+
+}
+.btnMyOffers{
+    background-color: #198C94;
+    color: white;
+    height: 75px;
+}
+.container{
+    margin-top: 2em;
+}
+
+
+
+.leftClass{
+    background-color: #52c5c6;
+    max-height: 50em;
+}
+
+.middleClass{
+    background-color: #33787b;
+    /*margin-left: 1em;
+    margin-right: 1em;*/
+}
+
+
+.rightClass{
+    background-color: rgba(196, 196, 196, 0.47);
+    border-radius: 2px;
+}
