@@ -1,0 +1,48 @@
+body {
+  background: url(../images/indigofrontpage.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.container{
+    text-align:center;
+}
+
+.header{
+    color:white;
+}
+
+.searchProperties{
+    margin-top:8%;
+}
+
+.searchButton{
+    width:100%;
+    background-color:#EAEAEA;
+    text-align:left;
+    color:#42393D;
+}
+
+.searchType{
+    background-color:#EAEAEA;
+    color:#42393D;
+    float:left;
+}
+.searchIcon{
+    background-color:#EAEAEA;
+    color:#42393D;
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius:0 !important;
+}
+
+
+.price {
+    float:left;
+    padding-right:0;
+}
+
+.rightButton{
+    float:right;
+}

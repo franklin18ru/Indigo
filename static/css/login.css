@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+
+h3 {
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}
+
+.text-column {
+    column-count: 2;
+    text-align: center;
+}
+
+#grey-box {
+    background-color: #505666;
+    color: white;
+}
+
+#button:hover {
+  background-color: #2eb8b8 ;
+}
+
+#input-box {
+    border: 4px solid #505666;
+}
+
+.container-fluid {
+    padding: 5rem;
+    margin: 10em;
+}
+
+#container-border {
+    border: 5px solid #505666;
+    border-radius: 5px;
+}
+
+.btnSubmit {
+    background-color: #505666;
+    border: 10px solid #505666;
+    border-radius: 10px;
+    padding-left: 4em;
+    padding-right: 4em;
+    color: white;
+    font-size: large;
+}
+
+#button {
+    background-color: #505666;
+    border: 5px solid #505666;
+    border-radius: 10px;
+    padding-left: 4em;
+    padding-right: 4em;
+    color: white;
+    font-size: large;
+}
+
+#button-green {
+    background-color: #2eb8b8;
+    border: 5px solid #2eb8b8;
+    border-radius: 10px;
+    padding-left: 4em;
+    padding-right: 4em;
+    color: white;
+    font-size: large;
+}
+
+#center-text {
+    text-align: center;
+    padding-top: 3em;
+}
+
+
+
