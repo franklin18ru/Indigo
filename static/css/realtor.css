@@ -1,0 +1,38 @@
+p {
+    margin: 0px 0px 6px !important;
+}
+#greenButton {
+    background-color: #198C94;
+    width: 30%;
+    padding: 3px 16px;
+}
+
+.col-sm-2{
+    width:4.8% !important;
+}
+
+.col-sm-offset-2 {
+    margin-left: 4.8% !important;
+}
+
+.col-sm-3 {
+    text-align: center;
+}
+
+.form-control {
+    width: 90%;
+}
+
+#drop {
+    margin-top: 97%;
+    margin-right: 10%;
+}
+
+.btn {
+    background-color: #505666;
+    color: white;
+}
+
+.btn-group-lg > .btn, .btn-lg {
+    padding: 3px 16px !important;
+}
