@@ -1,0 +1,84 @@
+h3 {
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}
+
+.text-column {
+    column-count: 2;
+    text-align: center;
+}
+
+#grey-box {
+    background-color: #505666;
+    color: white;
+}
+
+#button:hover {
+  background-color: #2eb8b8 ;
+}
+
+#input-box {
+    border: 1px solid #505666;
+}
+
+.container-fluid {
+    padding: 5rem;
+    margin-top:10%;
+}
+
+#container-border {
+    border: 5px solid #505666;
+    border-radius: 5px;
+}
+
+.btnSubmit {
+    background-color: #505666;
+    /*border-radius: 10px;*/
+    padding-left: 4em;
+    padding-right: 4em;
+    color: white;
+    font-size: large;
+}
+
+#button {
+    background-color: #505666;
+    /*border: 5px solid #505666;*/
+    padding-left: 4em;
+    padding-right: 4em;
+    color: white;
+    font-size: large;
+}
+
+.buttonGreen {
+    background-color: #2eb8b8;
+    margin-top:1em;
+    padding-left: 4em;
+    padding-right: 4em;
+    color: white;
+    font-size: large;
+}
+
+#center-text {
+    text-align: center;
+    padding-top: 3em;
+}
+
+.secondLogo {
+    max-width:200px;
+    max-height:100px;
+}
+
+.logoDiv {
+    text-align:center;
+}
+
+.close{
+    color:white;
+}
+.close:hover{
+    color:#2eb8b8;
+}
+
