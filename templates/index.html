@@ -28,12 +28,18 @@
       <li class="nav-item">
         <a class="nav-link" href="#">ALLAR EIGNIR</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">MITT SVÆÐI</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">INNSKRÁNING</a>
-      </li>
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="#">MITT SVÆÐI</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">SKRÁ ÚT</a>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="#">INNSKRÁNING</a>
+            </li>
+        {% endif %}
 
     </ul>
   </div>
