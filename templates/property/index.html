@@ -5,3 +5,8 @@
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 {% endblock %}
 
+{% block content %}
+    {% for property in properties %}
+        { {property.streetName} }
+    {% endfor %}
+{% endblock %}
