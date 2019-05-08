@@ -1,11 +1,5 @@
 .navbar-custom {
-    border-width: 0px;
-    -webkit-box-shadow: 0px 0px;
-    box-shadow: 0px 0px;
-    background-color: rgba(0,0,0,0.0);
-    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
-    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
-    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-color: #505666;
 }
 
 /* change the brand and text color */
@@ -17,18 +11,18 @@
 /* change the link color */
 .navbar-custom .navbar-nav .nav-link {
     color: rgba(255,255,255,1);
-    font-size:1.2rem;
 }
 
 /* change the color of active or hovered links */
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
-    color: #198c94;
+    color: #198C94;
 }
 
 /* for dropdown only - change the color of droodown */
 .navbar-custom .dropdown-menu {
     background-color: #ff5500;
+    /*font-family:Fira Sans Condensed;*/
 }
 .navbar-custom .dropdown-item {
     color: #ffffff;
@@ -39,8 +33,6 @@
     background-color: rgba(255,255,255,.5);
 }
 
-.logo {
-    max-width: 160px;
-    max-height: 80px;
+a.nav-link{
+    font-weight:400 !important;
 }
-
