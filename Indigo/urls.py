@@ -23,3 +23,4 @@ urlpatterns = [
     path('property/', include('property.urls')),
     path('login/', include('login.urls')),
 ]
+
