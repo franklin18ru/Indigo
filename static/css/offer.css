@@ -1,0 +1,141 @@
+/*tags*/
+img {
+    width: 250px;
+    height: 150px;
+    background-color: rgb(64, 140, 147);
+}
+
+/*classes*/
+.text-right {
+    text-align: right;
+}
+
+
+.btn-label-1 {
+    margin-top: 50%;
+    align-items: center;
+    text-align: right;
+}
+
+.btn-label, .btn-label-1 {
+    font-size: 15px;
+    font-family: Fira Sans Condensed;
+    letter-spacing: 2px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 17px;
+    display: flex;
+    position: absolute;
+    margin-right: -100px;
+}
+
+.box {
+    border: 2px solid lightgrey;
+    width: 100%;
+    margin-top: 50%;
+    margin-left: -20%;
+    margin-right: -20%;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+}
+
+.form-control-1 {
+    margin-top: 150px;
+    margin-left: 50%;
+}
+
+.form-control{
+    margin-left: 50%;
+}
+
+.btn {
+    background-color: rgb(79, 87,98);
+    color: white;
+    padding: 5px 75px;
+    margin-top: 50px;
+    margin-left: -40px;
+    border-radius: 10px;
+}
+
+.title {
+    position: absolute;
+    font-size: 40px;
+    font-family: Fira Sans Condensed;
+    letter-spacing: 2px;
+    color: #505666;
+    margin-top: 20%;
+    margin-bottom: 15%;
+    padding-left: 33%;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    margin-top: 10%;
+    font-family: Fira Sans Condensed;
+    letter-spacing: 2px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+}
+
+.text1 {
+    margin-top:45%;
+    font-family: Fira Sans Condensed;
+    letter-spacing: 2px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-toggle {
+    background: url(../images/select.png) no-repeat right #ddd;
+    width: 268px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 1px solid lightgray;
+    border-radius: 0;
+    height: 34px;
+    -webkit-appearance: none;
+}
+
+.dropdown {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*types*/
+input[type="text"] {
+    border-radius: 0;
+    border: 1px solid lightgray;
+    width: 50%;
+    margin-right: 5%;
+}
+
+input[type="submit"] {
+    background-color: rgb(64, 140, 147);
+    color: white;
+    border-collapse: collapse;
+    padding: 5px 75px;
+    margin-top: 70%;
+    margin-left: 60%;
+    border-radius: 10px;
+}
+
+/*id's*/
