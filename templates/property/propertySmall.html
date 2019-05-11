@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+        <link rel="stylesheet" href="{% static 'css/property.css' %}">
+        <link rel="stylesheet" href="{% static 'css/navbar.css'%}">
+{% endblock%}
+
+{% block content %}
+
+<div class="container-fluid property">
+  <div class="row">
+    <div class="col-6 leftClass">
+      <img class="propertyImage" src="{{ property.propertyimage_set.first.image }}">
+    </div>
+    <div class="col middleClass">
+        <div class="row topPhoto">
+            <img class="propertyImage smallImage" src="{{ propertyimage2.image}}" alt="img">
+        </div>
+        <div class="row float-right bottomPhoto">
+            <img class="propertyImage smallImage" src="{{ propertyimage3.image}}" alt="img">
+            <button type="button" class="btn btn-light border-dark allPhotosButton float-right">
+                Skoða allar myndir <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+
+    </div>
+    <div class="col rightClass">
+        <div class="col leftInfo">
+            <i class="material-icons float-left">rounded_corner</i>
+            <p class="propertyInfo">{{ property.squareMeter }} m<sup>2</sup></p>
+            <i class="material-icons float-left">meeting_room</i>
+            <p class="propertyInfo">{{ property.rooms }} herbergi</p>
+            <i class="material-icons float-left">domain</i>
+            <p class="propertyInfo">{{ property.type }}</p>
+            <p id="secondInfo"> Brunabótamat: {{ property.fireInsurance }} </p>
+            <p> Fasteignamat: {{ property.propValue }}</p>
+            <p>{{ property.shortDescription }}</p>
+        </div>
+        <button type="button" class="btn btn-light border-dark favoriteIcon">
+            <i class="fa fa-heart"></i>
+        </button>
+  </div>
+</div>
+
+<div class="container-fluid property">
+  <div class="row">
+      <div class="col-9 allInfo">
+          <h3>{{ property.streetName }}</h3>
+          <h5>{{ property.zip }} {{ property.zone }}</h5>
+      </div>
+      <div class="col">
+          <div class="float-right">
+          <button type="button" class="btn btn-offer">SENDA TILBOÐ</button>
+          <h3 class="thePrice">{{ property.price|floatformat }}</h3>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}

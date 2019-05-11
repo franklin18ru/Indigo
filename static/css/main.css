@@ -44,3 +44,11 @@
     max-height: 80px;
 }
 
+.navbar-toggler-icon{
+    color:white !important;
+}
+#navbar{
+    width:100%;
+}
+
+

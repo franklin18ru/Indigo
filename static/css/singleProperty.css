@@ -1,0 +1,89 @@
+.propertyLink{
+    text-decoration: none;
+    color:#505666;
+    margin-bottom:0;
+}
+
+.propertyLink:hover{
+    text-decoration: none;
+    color:#198c94;
+}
+.allProperties{
+    margin-top:5%;
+
+}
+
+.properties{
+    display:block;
+    overflow:auto;
+    min-width:350px;
+    max-width:500px;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    margin-bottom:20px;
+}
+
+
+.propertyImage{
+    width:100%;
+    height:auto;
+
+}
+
+.col mt-2{
+    max-width:350px !important;
+}
+
+#propertyPrice{
+    text-align:left;
+    white-space: nowrap;
+}
+
+.propertyInfo{
+    text-align:left;
+}
+
+.propertyDetailsBottom{
+    border-left:1px rgba(80, 86, 102,.3) solid;
+    border-right:1px rgba(80, 86, 102,.3) solid;
+    border-bottom:1px rgba(80, 86, 102,.3) solid;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+
+}.propertyDetailsTop{
+    border-left:1px rgba(80, 86, 102,.3) solid;
+    border-right:1px rgba(80, 86, 102,.3) solid;
+    border-top:1px rgba(80, 86, 102,.3) solid;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    padding:5px;
+}
+
+.propertyBtn{
+    margin-right:2%;
+    background-color:#505666;
+    color:white;
+    padding-left:30px;
+    padding-right:30px;
+}
+
+.leftInfo{
+    margin-left:5px;
+}
+
+.favoriteIcon{
+    position:absolute;
+    bottom:0;
+    right:0;
+    margin-right:0;
+    margin-bottom:0;
+
+}
+
+.mainImages{
+    max-height:600px;
+}
+
+.rightSide{
+    position:relative;
+}
