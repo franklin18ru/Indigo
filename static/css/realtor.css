@@ -1,38 +1,31 @@
-p {
-    margin: 0px 0px 6px !important;
-}
 #greenButton {
     background-color: #198C94;
     width: 30%;
     padding: 3px 16px;
 }
 
-.col-sm-2{
-    width:4.8% !important;
-}
-
-.col-sm-offset-2 {
-    margin-left: 4.8% !important;
-}
-
-.col-sm-3 {
+.col-3 {
     text-align: center;
+    margin-top: 4%;
 }
 
-.form-control {
-    width: 90%;
-}
-
-#drop {
-    margin-top: 97%;
-    margin-right: 10%;
+.col-6 {
+    margin-top: 8px;
 }
 
 .btn {
-    background-color: #505666;
     color: white;
+    background-color: #505666;
 }
 
-.btn-group-lg > .btn, .btn-lg {
-    padding: 3px 16px !important;
+#button1 {
+    margin-top: 40%;
 }
+
+.singleProperty {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+
