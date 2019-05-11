@@ -3,10 +3,15 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href ="{% static 'css/singleProperty.css' %}">
 {% endblock %}
 
 {% block content %}
-    {% for property in properties %}
-        { {property.streetName} }
-    {% endfor %}
+    <div class="container-fluid allProperties">
+    <div class="row">
+        {% for property in properties %}
+            {% include 'property/singleProperty.html' with property=property %}
+        {% endfor %}
+    </div>
+    </div>
 {% endblock %}

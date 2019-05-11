@@ -1,0 +1,28 @@
+<div class="properties col-md-4 offset-lg-1 offset-md-1 offset-sm-2">
+    <a href="/properties/{{ property.id }}" class="propertyLink">
+        <div class="propertyDetailsTop">
+            <h3 class="">{{ property.streetName }}</h3>
+            <h4 class="">{{ property.zip }} {{ property.zone }}</h4>
+        </div>
+        <img class="propertyImage" src="{{property.propertyimage_set.first.image}}" alt="Property Photo"/>
+        </a>
+        <div class="propertyDetailsBottom">
+        <div class="row">
+            <div class="col leftInfo">
+                <h3 id="propertyPrice">{{ property.price|floatformat }} kr.</h3>
+                <i class="material-icons float-left">rounded_corner</i>
+                <p class="propertyInfo">{{ property.squareMeter }} m<sup>2</sup></p>
+                <i class="material-icons float-left">meeting_room</i>
+                <p class="propertyInfo">{{ property.rooms }} herbergi</p>
+                <i class="material-icons float-left">domain</i>
+                <p class="propertyInfo">{{ property.type }}</p>
+            </div>
+            <div class="col mt-2 rightSide">
+                <button class="btn float-right propertyBtn">Skoða</button>
+                <button type="button" class="btn btn-light border-dark favoriteIcon">
+                    <i class="fa fa-heart"></i>
+                </button>
+            </div>
+        </div>
+        </div>
+</div>
