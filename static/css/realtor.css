@@ -1,0 +1,31 @@
+#greenButton {
+    background-color: #198C94;
+    width: 30%;
+    padding: 3px 16px;
+}
+
+.col-3 {
+    text-align: center;
+    margin-top: 4%;
+}
+
+.col-6 {
+    margin-top: 8px;
+}
+
+.btn {
+    color: white;
+    background-color: #505666;
+}
+
+#button1 {
+    margin-top: 40%;
+}
+
+.singleProperty {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+

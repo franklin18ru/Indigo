@@ -4,36 +4,38 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  color:#505666;
 }
 
 .container{
-    margin-top: 2em;
+    /*margin-top: 2em;*/
 }
+
 
 .leftClass{
-    background-color: #52c5c6;
-    max-height: 50em;
+    margin-right:0;
+    padding-right:0 !important;
+    max-height:1570px;
+    max-width:1155px;
+
 }
 
-.middleClass{
-    background-color: white;
-    margin-left: 1em;
-    margin-right: 1em;
-}
-.topPhoto{
-    background-color: #3d9299;
-}
-.bottomPhoto{
-    background-color: #33787b;
-}
 
 .allPhotosButton{
     float: right !important;
+    position:absolute;
+    bottom:0;
+    right:1.2%;
 }
 
 .rightClass{
-    background-color: rgba(196, 196, 196, 0.47);
+    background-color: rgba(196,196,196,0.5);
     border-radius: 2px;
+    position: relative;
+    margin-left:0 !important;
+    min-width:220px;
+    padding-right:0 !important;
+    padding-left:0 !important;
 }
 
 .allInfo{
@@ -43,7 +45,48 @@ body {
 .btn-offer{
     background-color: #198C94;
     color: white;
+    margin-top:0 !important;
 }
-.thePrice{
-    float: right;
+
+.propertyImage{
+    width:100%;
+    height:auto;
 }
+
+
+.smallImage{
+    height:48%;
+}
+
+.property{
+    margin-left:0 !important;
+    padding-left:0 !important;
+}
+
+#secondInfo{
+    margin-top:10%;
+}
+
+
+.bottomInfo{
+    /*position:absolute;*/
+    /*bottom:0;*/
+    /*right:50%;*/
+    /*margin-right:0 !important;*/
+
+}
+
+.mainInfo{
+    margin-bottom:10%;
+}
+.leftInfo{
+    /*padding-right:0;*/
+    /*padding-left:0;*/
+}
+
+@media only screen and (max-width: 600px) {
+    #shortDescription {
+        display: none;
+    }
+}
+
