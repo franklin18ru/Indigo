@@ -134,5 +134,27 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 
-LOGIN_URL = '/' #FIX TO GO TO LOGIN
+LOGIN_URL = '/login' #FIX TO GO TO LOGIN
 LOGIN_REDIRECT_URL = '/'
+
+LOGIN_EXEMPT_URL = [
+    'password-reset/',
+    'password-reset/done/',
+    'password-reset/confirm/<uidb64>/<token>/',
+    'password-reset/complete/'
+]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'indigofasteignir'
+EMAIL_HOST_PASSWORD = 'Indigo1234'
+
+
+
+
+
+
+
+
