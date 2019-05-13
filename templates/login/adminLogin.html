@@ -1,0 +1,53 @@
+ {% extends 'base.html' %}
+    {% load static %}
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    {% endblock %}
+    {% block content %}
+
+        <div class="container">
+            <div class="row">
+            <div class="col">
+            </div>
+            <div class="col logoDiv">
+                <img class="secondLogo" src="{% static 'images/logo2.png'%}">
+            </div>
+
+            <div class="col">
+            </div>
+        </div>
+        </div>
+        <div class="container  login-container text-center">
+                {% if registerMessages %}
+                    <div class='alert alert-danger'>
+                        {{ registerMessages.Error }}
+                    </div>
+                {% endif %}
+
+                    <div class="col-md-6 text-center">
+                        <div class="container-fluid" id="container-border" >
+                            <h3>Innskráning</h3>
+                            <br>
+                            {% if loginMessages %}
+                                <div class='alert alert-danger'>
+                                    {{ loginMessages.Error }}
+                                </div>
+                            {% endif %}
+                            <form method="POST">
+                                    {% csrf_token %}
+                                    <label>Netfang:</label>
+                                    {{ loginForm.username }}
+                                    <br>
+                                    <label>Lykilorð:</label>
+                                    {{ loginForm.password }}
+                                <div class="form-group" id="center-text" >
+                                    <input type="submit" class="btnSubmit btn" name="login" value="Skrá inn" /> <br><br>
+                                    <a href="{% url 'password_reset' %}" class="ForgetPwd">Gleymt lykilorð?</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+            </div>
+    {%  endblock %}
