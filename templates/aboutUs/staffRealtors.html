@@ -8,7 +8,8 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container adjustFooter">
+    <h1>Starfsmenn</h1>
     <div class="row">
         {% for realtor in realtors %}
             {% include 'aboutUs/singleRealtor.html' with realtor=realtor %}

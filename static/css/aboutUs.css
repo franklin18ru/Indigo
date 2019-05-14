@@ -20,3 +20,7 @@ h1 {
 .firstParagraph {
     padding-top: 30px;
 }
+
+.container {
+    min-height: 80vh!important;
+}

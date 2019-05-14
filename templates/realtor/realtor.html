@@ -24,7 +24,7 @@
                      <div class="col">
                          <div class="contact-form">
 
-                            <select class="mdb-select md-form" multiple>
+                             <select id="example-xss" multiple="multiple">
                               <option value="" disabled selected>Veldu stöðu/r</option>
                               <option value="1">{{ realtor.name }}</option>
                               <option value="2">Germany</option>
@@ -71,5 +71,5 @@
 {% endblock %}
 
 {% block script %}
-    <script src="{% static 'js/realtorMultiselect.js' %}"></script>
+    <script src="{% static 'js/multiSelector.js' %}"></script>
 {% endblock %}
