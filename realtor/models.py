@@ -11,6 +11,8 @@ class Realtors(models.Model):
     email = models.CharField(max_length=255)
     description = models.CharField(max_length=999)
     password = models.CharField(max_length=255)
+    def __str__(self):
+        return self.name
 
 
 
@@ -20,3 +22,4 @@ class SoldProperty(models.Model):
     price = models.PositiveIntegerField()
     realtor = models.ForeignKey(Realtors, on_delete=models.CASCADE)
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
+
