@@ -20,3 +20,10 @@ class PropertyImage(models.Model):
     propertyId = models.ForeignKey(Properties, on_delete=models.CASCADE)
     image = models.CharField(max_length=255)
     imagenum = models.PositiveIntegerField()
+
+
+class PropertyZoneArea(models.Model):
+    zip = models.CharField(max_length=3)
+    area = models.CharField(max_length=255)
+    region = models.CharField(max_length=255)
+
