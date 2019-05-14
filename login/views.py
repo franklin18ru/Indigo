@@ -38,6 +38,7 @@ def index(request):
             user = form.get_user()
             login(request, user)
             return HttpResponseRedirect(request.GET.get('next', settings.LOGIN_REDIRECT_URL))
+            #
         else:
             loginMessages = {'Error': 'Invalid username and/or password'}
 
@@ -75,8 +76,23 @@ def logoutView(request):
 
 
 def adminLogin(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            if user.is_staff:
+                login(request, user)
+                return HttpResponseRedirect(request.GET.get('next', '/realtor'))
+            else:
+                loginMessages = {'Error': 'Notenda hefur ekki aðgang að þessari síðu'}
+        else:
+            loginMessages = {'Error': 'Ekki rétt netfang og/eða lykilorð'}
     context = {'loginForm': AuthenticationForm()}
-    return render(request, 'login/adminLogin.html', context)
+    try:
+        context['loginMessages'] = loginMessages
+    except Exception:
+        pass
 
+    return render(request, 'realtor/realtorLogin.html', context)
 
 
