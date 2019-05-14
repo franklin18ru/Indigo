@@ -6,8 +6,11 @@ from property.models import PropertyImage
 
 
 def index(request):
-    context = {'properties': Properties.objects.all().order_by('streetName')}
-    return render(request, 'property/index.html', context)
+    if 'search' in request:
+        pass
+    else:
+        context = {'properties': Properties.objects.all().order_by('streetName')}
+        return render(request, 'property/index.html', context)
 
 def getPropertyById(request, id):
     return render(request, 'property/property.html', {
