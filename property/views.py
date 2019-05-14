@@ -15,3 +15,9 @@ def getPropertyById(request, id):
         'propertyimage2': get_object_or_404(PropertyImage, imagenum=2, propertyId_id=id),
         'propertyimage3': get_object_or_404(PropertyImage, imagenum=3, propertyId_id=id)
     })
+
+def createProperty(request):
+    if request.method == 'POST':
+        print(1)
+    else:
+        print(2)

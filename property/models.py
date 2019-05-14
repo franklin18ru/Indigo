@@ -14,9 +14,14 @@ class Properties(models.Model):
     description = models.CharField(max_length=999)
     shortDescription = models.CharField(max_length=255)
     realtor = models.ForeignKey(Realtors, on_delete=models.CASCADE)
-    zone = models.CharField(max_length=255)
+    zone = models.CharField(max_length=255, default="default")
 
 class PropertyImage(models.Model):
     propertyId = models.ForeignKey(Properties, on_delete=models.CASCADE)
     image = models.CharField(max_length=255)
-    imagenum = models.PositiveIntegerField()
+    imagenum = models.PositiveIntegerField(default=1)
+
+class PropertyArea(models.Model):
+    zip = models.CharField(max_length=3)
+    zone = models.CharField(max_length=255, default="Reykjavík")
+
