@@ -1,7 +1,9 @@
 from django.shortcuts import render
+import sys
+from django.shortcuts import render, HttpResponseRedirect
+from property.models import Properties
 from property.models import PropertyZoneArea
 
-import sys
 
 # Create your views here.
 
@@ -20,4 +22,3 @@ def index(request, user=None):
         , 'sudurland': PropertyZoneArea.objects.all().filter(region='Suðurland')
                }
     return render(request, 'frontpage/index.html', regions, {'user': request.user})
-
