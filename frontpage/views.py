@@ -1,27 +1,24 @@
+from django.shortcuts import render
+import sys
 from django.shortcuts import render, HttpResponseRedirect
 from property.models import Properties
+from property.models import PropertyZoneArea
+
 
 # Create your views here.
 
 def index(request, user=None):
-    # if 'search' in request.GET:
-    #     streetName = request.GET['streetName']
-    #     priceFrom = request.GET['priceFrom']
-    #     priceTo = request.GET['priceTo']
-    #     sizeFrom = request.GET['sizeFrom']
-    #     sizeTo = request.GET['sizeTo']
-    #     area = request.GET['area']
-    #     type = request.GET['type']
-    #     # Check each box and then create query with the url and send the user there
-    #     query = {
-    #         'streetName': streetName,
-    #         'priceFrom': priceFrom,
-    #         'priceTo': priceTo,
-    #         'sizeFrom': sizeFrom,
-    #         'sizeTo': sizeTo,
-    #     }
-    #     # add query to url
-    #     return HttpResponseRedirect(request.GET.get('next', '/properties'))
-
-
-    return render(request, 'frontpage/index.html', {'user': request.user})
+    regions = {'reykjavik': PropertyZoneArea.objects.all().filter(region='Reykjavík')
+        ,'kopavogur': PropertyZoneArea.objects.all().filter(region='Kópavogur')
+        ,'gardabaer': PropertyZoneArea.objects.all().filter(region='Garðabær')
+        ,'hafnarfjordur': PropertyZoneArea.objects.all().filter(region='Hafnarfjörður')
+        , 'mosfellsbaer': PropertyZoneArea.objects.all().filter(region='Mosfellsbær')
+        , 'seltjarnarnes': PropertyZoneArea.objects.all().filter(region='Seltjarnarnes')
+        , 'sudurnes': PropertyZoneArea.objects.all().filter(region='Suðurnes')
+        , 'nordurland': PropertyZoneArea.objects.all().filter(region='Norðurland')
+        , 'vestfirdir': PropertyZoneArea.objects.all().filter(region='Vestfirðir')
+        , 'vesturland': PropertyZoneArea.objects.all().filter(region='Vesturland')
+        , 'austurland': PropertyZoneArea.objects.all().filter(region='Austurland')
+        , 'sudurland': PropertyZoneArea.objects.all().filter(region='Suðurland')
+               }
+    return render(request, 'frontpage/index.html', regions, {'user': request.user})

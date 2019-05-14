@@ -40,20 +40,108 @@
                             <button class="btn dropdown-toggle searchButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Svæði
                             </button>
-                            <div class="dropdown-menu searchButton" aria-labelledby="dropdownMenuButton">
-                                <ul id="myUL">
-                                    <div><span class="toggle"> Höfuðborgarsvæðið <span class="fas fa-angle-down dropArrow"></span></span>
+                            <div class="searchButton" aria-labelledby="dropdownMenuButton">
+                                <ul class="dropdown-menu scrollable-menu" id="myUL">
+                                    <div class="capDiv"><span class="toggle capital"> Höfuðborgarsvæðið <span class="fas fa-angle-down dropArrow"></span></span>
                                         <ul class="nested">
                                             <li><span class="toggle"> Reykjavík <span class="fas fa-angle-down dropArrow"></span> </span>
                                                 <ul class="nested">
                                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                                     <label class="form-check-label" for="exampleCheck1">Velja allt</label><br>
-                                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                    <label class="form-check-label" for="exampleCheck1">101 Reykjavík</label><br>
-                                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                    <label class="form-check-label" for="exampleCheck1">103 Reykjavík</label>
+                                                    {% for zone in reykjavik %}
+                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
+                                                    {% endfor%}
                                                 </ul>
                                             </li>
+                                            <li><span class="toggle"> Kópavogur <span class="fas fa-angle-down dropArrow"></span> </span>
+                                                <ul class="nested">
+                                                    {% for zone in kopavogur %}
+                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
+                                                    {% endfor%}
+                                                </ul>
+                                            </li>
+                                            <li><span class="toggle"> Garðabær <span class="fas fa-angle-down dropArrow"></span> </span>
+                                                <ul class="nested">
+                                                    {% for zone in gardabaer %}
+                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
+                                                    {% endfor%}
+                                                </ul>
+                                            </li>
+                                            <li><span class="toggle"> Hafnarfjörður <span class="fas fa-angle-down dropArrow"></span> </span>
+                                                <ul class="nested">
+                                                    {% for zone in hafnarfjordur %}
+                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
+                                                    {% endfor%}
+                                                </ul>
+                                            </li>
+                                            <li><span class="toggle"> Mosfellsbær <span class="fas fa-angle-down dropArrow"></span> </span>
+                                                <ul class="nested">
+                                                    {% for zone in mosfellsbaer %}
+                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
+                                                    {% endfor%}
+                                                </ul>
+                                            </li>
+                                            <li><span class="toggle"> Seltjarnarnes <span class="fas fa-angle-down dropArrow"></span> </span>
+                                                <ul class="nested">
+                                                    {% for zone in seltjarnarnes %}
+                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
+                                                    {% endfor%}
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div> <span class="toggle capital"> Suðurnes <span class="fas fa-angle-down dropArrow"></span></span>
+                                        <ul class="nested">
+                                            {% for zone in sudurnes %}
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
+                                            {% endfor%}
+                                        </ul>
+                                    </div>
+                                    <div> <span class="toggle capital"> Vestfirðir <span class="fas fa-angle-down dropArrow"></span></span>
+                                        <ul class="nested">
+                                            {% for zone in vestfirdir %}
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
+                                            {% endfor%}
+                                        </ul>
+                                    </div>
+                                    <div> <span class="toggle capital"> Norðurland <span class="fas fa-angle-down dropArrow"></span></span>
+                                        <ul class="nested">
+                                            {% for zone in nordurland %}
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
+                                            {% endfor%}
+                                        </ul>
+                                    </div>
+                                    <div> <span class="toggle capital"> Vesturland <span class="fas fa-angle-down dropArrow"></span></span>
+                                        <ul class="nested">
+                                            {% for zone in vesturland %}
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
+                                            {% endfor%}
+                                        </ul>
+                                    </div>
+                                    <div> <span class="toggle capital"> Austurland <span class="fas fa-angle-down dropArrow"></span></span>
+                                        <ul class="nested">
+                                            {% for zone in austurland %}
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
+                                            {% endfor%}
+                                        </ul>
+                                    </div>
+                                    <div> <span class="toggle capital"> Suðurland <span class="fas fa-angle-down dropArrow"></span></span>
+                                        <ul class="nested">
+                                            {% for zone in sudurland %}
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
+                                            {% endfor%}
                                         </ul>
                                     </div>
                                 </ul>
@@ -68,8 +156,19 @@
                                 <button class="btn dropdown-toggle searchButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Verð frá
                                 </button>
-                                <div class="dropdown-menu searchButton" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Future Generated</a>
+                                <div class="searchButton priceFrom" aria-labelledby="dropdownMenuButton">
+                                    <ul class="dropdown-menu scrollable-menu" id="myUL">
+                                        <a class="dropdown-item" href="#">10 mkr.</a>
+                                        <a class="dropdown-item" href="#">20 mkr.</a>
+                                        <a class="dropdown-item" href="#">30 mkr.</a>
+                                        <a class="dropdown-item" href="#">40 mkr.</a>
+                                        <a class="dropdown-item" href="#">50 mkr.</a>
+                                        <a class="dropdown-item" href="#">60 mkr.</a>
+                                        <a class="dropdown-item" href="#">70 mkr.</a>
+                                        <a class="dropdown-item" href="#">80 mkr.</a>
+                                        <a class="dropdown-item" href="#">90 mkr.</a>
+                                        <a class="dropdown-item" href="#">100 mkr.</a>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -80,8 +179,19 @@
                                 <button class="btn dropdown-toggle searchButton rightButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Verð til
                                 </button>
-                                <div class="dropdown-menu searchButton" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Future Generated</a>
+                                <div class="searchButton priceTo" aria-labelledby="dropdownMenuButton">
+                                    <ul class="dropdown-menu scrollable-menu" id="myUL">
+                                        <a class="dropdown-item" href="#">10 mkr.</a>
+                                        <a class="dropdown-item" href="#">20 mkr.</a>
+                                        <a class="dropdown-item" href="#">30 mkr.</a>
+                                        <a class="dropdown-item" href="#">40 mkr.</a>
+                                        <a class="dropdown-item" href="#">50 mkr.</a>
+                                        <a class="dropdown-item" href="#">60 mkr.</a>
+                                        <a class="dropdown-item" href="#">70 mkr.</a>
+                                        <a class="dropdown-item" href="#">80 mkr.</a>
+                                        <a class="dropdown-item" href="#">90 mkr.</a>
+                                        <a class="dropdown-item" href="#">100 mkr.</a>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -111,30 +221,75 @@
                                 <label class="form-check-label" for="exampleCheck1">Einbýli</label><br>
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Fjölbýli</label>
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Raðhús</label>
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Parhús</label>
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Sumarhús</label>
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Atvinnuhús</label>
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Annað</label>
                             </div>
                         </div>
-
                     </div>
 
                     <div class="col-6">
                         <div class="col-md-6 price">
                             <div class="dropdown">
+                                <!--
                                 <button class="btn dropdown-toggle searchButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Stærð frá
                                 </button>
-                                <div class="dropdown-menu searchButton" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Future Generated</a>
-                                </div>
+                                <div class="dsearchButton sizeDropDownFrom" aria-labelledby="dropdownMenuButton">
+                                    <ul class="dropdown-menu scrollable-menu" id="myUL">
+                                        <a class="dropdown-item" href="#">10 m²</a>
+                                        <a class="dropdown-item" href="#">20 m²</a>
+                                        <a class="dropdown-item" href="#">40 m²</a>
+                                        <a class="dropdown-item" href="#">60 m²</a>
+                                        <a class="dropdown-item" href="#">80 m²</a>
+                                        <a class="dropdown-item" href="#">100 m²</a>
+                                        <a class="dropdown-item" href="#">125 m²</a>
+                                        <a class="dropdown-item" href="#">150 m²</a>
+                                        <a class="dropdown-item" href="#">175 m²</a>
+                                        <a class="dropdown-item" href="#">200 m²</a>
+                                        <a class="dropdown-item" href="#">250 m²</a>
+                                        <a class="dropdown-item" href="#">300 m²</a>
+                                    </ul>
+                                </div>-->
+                                <select class="form-control dropdown-toggle searchButton">
+                                    <option value="five">Stærð frá</option>
+                                    <option value="one">10 m²</option>
+                                    <option value="two">20 m²</option>
+                                    <option value="three">40 m²</option>
+                                    <option value="four">60 m²</option>
+                                    <option value="five">80 m²</option>
+                                    <option value="five">100 m²</option>
+                                    <option value="five">150 m²</option>
+                                    <option value="five">200 m²</option>
+                                    <option value="five">250 m²</option>
+                                    <option value="five">300 m²</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-6 price">
                             <div class="dropdown">
-                                <button class="btn dropdown-toggle searchButton rightButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Stærð til
-                                </button>
-                                <div class="dropdown-menu searchButton" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Future Generated</a>
-                                </div>
+                                <select class="form-control dropdown-toggle searchButton">
+                                    <ul class="dropdown-menu scrollable-menu" id="myUL">
+                                    <option value="five">Stærð til</option>
+                                    <option value="one">10 m²</option>
+                                    <option value="two">20 m²</option>
+                                    <option value="three">40 m²</option>
+                                    <option value="four">60 m²</option>
+                                    <option value="five">80 m²</option>
+                                    <option value="five">100 m²</option>
+                                    <option value="five">150 m²</option>
+                                    <option value="five">200 m²</option>
+                                    <option value="five">250 m²</option>
+                                    <option value="five">300 m²</option>
+                                    </ul>
+                                </select>
                             </div>
                         </div>
                     </div>
