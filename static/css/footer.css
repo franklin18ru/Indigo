@@ -1,0 +1,24 @@
+.col-xs-6 {
+    background-color: #505666;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: #198C94;
+}
+
+.secondLogo {
+    max-height: 85px;
+}
+
+.rightDiv {
+    text-align: right;
+}
+
+.page-footer {
+
+}

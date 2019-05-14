@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.aboutUsInfo {
+    text-align: center;
+}
+
+.ruLink {
+    color: black;
+}
+
+.authors {
+    font-weight: bold;
+    font-style: italic;
+    padding-top: 30px;
+}
+
+.firstParagraph {
+    padding-top: 30px;
+}

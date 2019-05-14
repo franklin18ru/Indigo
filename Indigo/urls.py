@@ -26,6 +26,7 @@ urlpatterns = [
     path('admins/', include('admin.urls')),
     path('users/', include('user.urls')),
     path('properties/', include('property.urls')),
-    path('realtor/', include('realtor.urls'))
+    path('realtor/', include('realtor.urls')),
+    path('aboutUs/', include('aboutUs.urls'))
 ]
 

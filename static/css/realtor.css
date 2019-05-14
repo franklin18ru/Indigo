@@ -18,6 +18,14 @@
     background-color: #505666;
 }
 
+#dropdownMenuButton {
+    background-color: white;
+    color: #495057;
+    border-color: #ced4da;
+    width: 100%;
+    text-align: right;
+}
+
 #button1 {
     margin-top: 40%;
 }

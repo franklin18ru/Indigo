@@ -9,6 +9,5 @@ def index(request):
 
 def getPropertyByRealtorId(request, id):
     context = {'property': get_object_or_404(Properties, pk=id)}
-    print(context)
     return render(request, 'property/property.html', {'property': get_object_or_404(Properties, pk=id)})
 
