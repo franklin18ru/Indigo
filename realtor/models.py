@@ -6,14 +6,13 @@ from user.models import Users
 class Positions(models.Model):
     name = models.CharField(max_length=255)
 
+
 class Realtors(models.Model):
     name = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
     description = models.CharField(max_length=999)
     password = models.CharField(max_length=255)
-    def __str__(self):
-        return self.name
-
+    positions = models.ManyToManyField(Positions)
 
 
 class SoldProperty(models.Model):

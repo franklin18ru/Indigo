@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/staffRealtors.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container adjustFooter">
+    <h1>Starfsmenn</h1>
+    <div class="row">
+        {% for realtor in realtors %}
+            {% include 'aboutUs/singleRealtor.html' with realtor=realtor %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

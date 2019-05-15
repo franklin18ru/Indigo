@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{% static 'css/singleProperty.css' %}">
 {% endblock %}
 
+
+
 {% block content %}
     <div class="container">
     <div class="row">
@@ -21,10 +23,17 @@
                  <div class="row justify-content-center">
                      <div class="col">
                          <div class="contact-form">
-                             <div class="form-group">
-                                 <label class="control-label col-sm-2" for="position">Staða:</label>
-                                 <input type="text" class="form-control" id="position" placeholder="Fasteignasali  /  Framkvæmdastjóri">
-                             </div>
+
+                             <select id="example-xss" multiple="multiple">
+                              <option value="" disabled selected>Veldu stöðu/r</option>
+                              <option value="1">{{ realtor.name }}</option>
+                              <option value="2">Germany</option>
+                              <option value="3">France</option>
+                              <option value="4">Poland</option>
+                              <option value="5">Japan</option>
+                            </select>
+                            <button class="btn-save btn btn-primary btn-sm">Save</button>
+
                              <div class="form-group">
                                  <label class="control-label col-sm-2" for="email">Netfang:</label>
                                  <input type="email" class="form-control" id="email" placeholder="fasteign@fasteign.is">
@@ -59,4 +68,8 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/multiSelector.js' %}"></script>
 {% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/aboutUs.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <img src="../static/images/ruLogo.png" class="img-responsive" alt="profilePicture" width="500">
+        <h1>Um Indigo Fasteignir</h1>
+        <p class="firstParagraph aboutUsInfo">
+            Vefsíða þessi var unnin í Verklegu námskeiði 2 á annarri önn við
+            <a class="ruLink" href="https://www.ru.is/namid/namsyfirlit/tolvunarfraedi">tölvunarfræðideild Háskólans í Reykjavík</a>.
+        <p class="aboutUsInfo">
+            Verkefnið fólst í að útbúa vefkerfi fyrir fasteignasölu sem við skýrðum <b>Indigo Fasteignir</b>.
+        </p>
+        </p>
+        <p class="aboutUsInfo">
+            Aðal markmið vefsíðunnar er að gera notendum kleift að finna og kaupa fasteignir með auðveldum hætti.
+        </p>
+        <p class="aboutUsInfo">
+            Indigo Fasteignir mun að öllum líkindum ekki halda áfram starfsemi eftir 22.maí þar sem námskeiðið
+            verður formlega lokið um það leiti.
+        </p>
+        <p class="authors aboutUsInfo">
+            Höfundar: Franklin Þór Vale, Kamila Antonina Tarnowska, Margrét Anna Ágústsdóttir,
+            María Mjöll Hrafnsdóttir, Ólafur Barkarson
+        </p>
+        <p class="aboutUsInfo">
+            Takk fyrir okkur!
+        </p>
+    </div>
+{% endblock %}
