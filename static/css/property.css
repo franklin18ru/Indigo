@@ -84,9 +84,21 @@ body {
     /*padding-left:0;*/
 }
 
+.allImages{
+    width:100%;
+    height:auto;
+}
+
+.allImagesClass{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+
 @media only screen and (max-width: 600px) {
     #shortDescription {
         display: none;
     }
 }
+
 

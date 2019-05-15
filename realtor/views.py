@@ -13,3 +13,5 @@ def getPropertyByRealtorId(request, id):
     context = {'property': get_object_or_404(Properties, pk=id)}
     return render(request, 'property/property.html', {'property': get_object_or_404(Properties, pk=id)})
 
+def addProperty(request):
+    return render(request, 'realtor/addProperty.html')

@@ -3,7 +3,6 @@ from user.models import Users
 
 # Create your models here.
 
-
 class Positions(models.Model):
     name = models.CharField(max_length=255)
 
@@ -22,3 +21,4 @@ class SoldProperty(models.Model):
     price = models.PositiveIntegerField()
     realtor = models.ForeignKey(Realtors, on_delete=models.CASCADE)
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
+
