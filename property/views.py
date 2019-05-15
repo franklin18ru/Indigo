@@ -33,8 +33,7 @@ def index(request):
         if priceTo != 'none':
             properties = properties.filter(price__lte=priceTo)
         if streetName != '':
-            print('is not working')
-            #properties = properties.filter(streetName__icontains=streetName)
+            properties = properties.filter(streetName__icontains=streetName)
 
         if len(types) != 0:
             properties = properties.filter(type__in=types)
