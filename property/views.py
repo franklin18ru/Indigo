@@ -42,7 +42,6 @@ def index(request):
         if len(zips) != 0:
             properties = properties.filter(zip__in=zips)
         # add search filtering here
-
     context = {'properties': properties}
     return render(request, 'property/index.html', context)
 

@@ -22,7 +22,7 @@ class Properties(models.Model):
 class PropertyImage(models.Model):
     propertyId = models.ForeignKey(Properties, on_delete=models.CASCADE)
     image = models.CharField(max_length=255)
-    imagenum = models.PositiveIntegerField()
+    imagenum = models.PositiveIntegerField(default=1)
 
 
 class PropertyZoneArea(models.Model):
