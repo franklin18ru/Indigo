@@ -53,7 +53,10 @@ def index(request):
             return HttpResponseRedirect(request.GET.get('next', settings.LOGIN_REDIRECT_URL))
         else:
             registerMessages = {'Error': 'Ógild nýskráning'}
-    context = {'loginForm': AuthenticationForm(), 'registerForm': RegisterForm(), 'redirect_authenticated_user': True}
+    loginForm = AuthenticationForm()
+    loginForm.fields['username'].widget.attrs['class'] = 'form-control input-box'
+    loginForm.fields['password'].widget.attrs['class'] = 'form-control input-box'
+    context = {'loginForm': loginForm, 'registerForm': RegisterForm(), 'redirect_authenticated_user': True}
 
     try:
         if loginMessages:
@@ -87,7 +90,12 @@ def adminLogin(request):
                 loginMessages = {'Error': 'Notenda hefur ekki aðgang að þessari síðu'}
         else:
             loginMessages = {'Error': 'Ekki rétt netfang og/eða lykilorð'}
-    context = {'loginForm': AuthenticationForm()}
+
+    loginForm = AuthenticationForm()
+    loginForm.fields['username'].widget.attrs['class'] = 'form-control input-box'
+    loginForm.fields['password'].widget.attrs['class'] = 'form-control input-box'
+    context = {'loginForm': loginForm}
+
     try:
         context['loginMessages'] = loginMessages
     except Exception:

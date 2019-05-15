@@ -1,14 +1,13 @@
- {% extends 'base.html' %}
-    {% load static %}
-    {% block css %}
-        <link rel="stylesheet" href="{% static 'css/login.css' %}">
-        <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-        <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-    {% endblock %}
-    {% block content %}
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+{% endblock %}
+{% block content %}
 
-        <div class="container">
-            <div class="row">
+<div class="container">
+        <div class="row">
             <div class="col">
             </div>
             <div class="col logoDiv">
@@ -18,118 +17,118 @@
             <div class="col">
             </div>
         </div>
+</div>
+<div class="container login-container">
+    {% if registerMessages %}
+        <div class='alert alert-danger'>
+            {{ registerMessages.Error }}
         </div>
-        <div class="container login-container">
-                {% if registerMessages %}
+    {% endif %}
+    <div class="row">
+        <div class="col-md-6 login-form-1">
+            <div class="container-fluid" id="container-border" >
+                <h3>Innskráning</h3>
+                <br>
+                {% if loginMessages %}
                     <div class='alert alert-danger'>
-                        {{ registerMessages.Error }}
+                        {{ loginMessages.Error }}
                     </div>
                 {% endif %}
-                <div class="row">
-                    <div class="col-md-6 login-form-1">
-                        <div class="container-fluid" id="container-border" >
-                            <h3>Innskráning</h3>
-                            <br>
-                            {% if loginMessages %}
-                                <div class='alert alert-danger'>
-                                    {{ loginMessages.Error }}
-                                </div>
-                            {% endif %}
-                            <form method="POST">
-                                    {% csrf_token %}
-                                    <label>Netfang:</label>
-                                    {{ loginForm.username }}
-                                    <br>
-                                    <label>Lykilorð:</label>
-                                    {{ loginForm.password }}
-                                <div class="form-group" id="center-text" >
-                                    <input type="submit" class="btnSubmit btn" name="login" value="Skrá inn" /> <br><br>
-                                    <a href="{% url 'password_reset' %}" class="ForgetPwd">Gleymt lykilorð?</a>
-                                </div>
-                            </form>
+                <form method="POST">
+                        {% csrf_token %}
+                        <label>Netfang:</label>
+                        {{ loginForm.username }}
+                        <br>
+                        <label>Lykilorð:</label>
+                        {{ loginForm.password }}
+                        <div class="form-group" id="center-text" >
+                            <input type="submit" class="btnSubmit btn" name="login" value="Skrá inn" /> <br><br>
+                            <a href="{% url 'password_reset' %}">Gleymt lykilorð?</a>
                         </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-6 login-form-2">
+            <div class="container-fluid">
+                <h3>Ekki með aðgang?</h3>
+                <br>
+                <div class="form-group">
+                    <div class="text-column">
+                        <p>Hjá Indigo Fasteignum getur þú verslað fasteignir hjá tugum fasteignasala.</p> <br>
+                        <p>Verslaðu fasteign með aðeins nokkrum músarklikkum. Það kostar ekkert að búa til aðgang!</p> <br><br>
                     </div>
 
-                    <div class="col-md-6 login-form-2">
-                        <div class="container-fluid" >
-                            <h3>Ekki með aðgang?</h3>
-                            <br>
-                            <div class="form-group">
-                                <div class="text-column">
-                                    <p>Hjá Indigo Fasteignum getur þú verslað fasteignir hjá tugum fasteignasala.</p> <br>
-                                    <p>Verslaðu fasteign með aðeins nokkrum músarklikkum. Það kostar ekkert að búa til aðgang!</p> <br><br>
+                    <!-- Button trigger modal -->
+                    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" id="pop-up" role="document">
+                            <div class="modal-content" id="grey-box">
+                                <div class="modal-header text-center" id="grey-box">
+                                    <h4 class="modal-title w-100 font-weight-bold">Nýskráning</h4>
+                                    <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times; </span>
+                                    </button>
                                 </div>
+                                <form method="POST">
+                                    <div class="modal-body mx-3" id="grey-box">
 
-                                <!-- Button trigger modal -->
-                                <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" id="pop-up" role="document">
-                                        <div class="modal-content" id="grey-box">
-                                            <div class="modal-header text-center" id="grey-box">
-                                                <h4 class="modal-title w-100 font-weight-bold">Nýskráning</h4>
-                                                <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times; </span>
-                                                </button>
+                                            {% csrf_token %}
+
+
+                                            <div class="md-form mb-5">
+                                                <label data-error="wrong" data-success="right" for="orangeForm-name">Nafn</label>
+                                                <i class="fas fa-user prefix grey-text"></i>
+                                                {{ registerForm.first_name }}
                                             </div>
-                                            <form method="POST">
-                                                <div class="modal-body mx-3" id="grey-box">
 
-                                                        {% csrf_token %}
-
-
-                                                        <div class="md-form mb-5">
-                                                            <label data-error="wrong" data-success="right" for="orangeForm-name">Nafn</label>
-                                                            <i class="fas fa-user prefix grey-text"></i>
-                                                            {{ registerForm.first_name }}
-                                                        </div>
-
-                                                        <div class="md-form mb-5">
-                                                            <label data-error="wrong" data-success="right" for="orangeForm-email">Netfang</label>
-                                                            <i class="fas fa-envelope prefix grey-text"></i>
-                                                            {{ registerForm.username }}
-                                                            <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
-                                                        </div>
+                                            <div class="md-form mb-5">
+                                                <label data-error="wrong" data-success="right" for="orangeForm-email">Netfang</label>
+                                                <i class="fas fa-envelope prefix grey-text"></i>
+                                                {{ registerForm.username }}
+                                                <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+                                            </div>
 
 
-                                                        <div class="md-form mb-4">
-                                                            <label data-error="wrong" data-success="right" for="orangeForm-pass">Lykilorð</label>
-                                                            <i class="fas fa-lock prefix grey-text"></i>
-                                                            {{ registerForm.password1 }}
-                                                            <br>
-                                                            <span class="helptext">
-                                                            <ul>
-                                                                <li>Your password can't be too similar to your other personal information.</li>
-                                                                <li>Your password must contain at least 8 characters.</li>
-                                                                <li>Your password can't be a commonly used password.</li>
-                                                                <li>Your password can't be entirely numeric.</li>
-                                                            </ul>
-                                                        </span>
-                                                        </div>
-                                                        <div class="md-form mb-4">
-                                                            <label data-error="wrong" data-success="right" for="orangeForm-pass">Staðfesta Lykilorð</label>
-                                                            <i class="fas fa-lock prefix grey-text"></i>
-                                                            {{ registerForm.password2 }}
-                                                        </div>
+                                            <div class="md-form mb-4">
+                                                <label data-error="wrong" data-success="right" for="orangeForm-pass">Lykilorð</label>
+                                                <i class="fas fa-lock prefix grey-text"></i>
+                                                {{ registerForm.password1 }}
+                                                <br>
+                                                <span class="helptext">
+                                                <ul>
+                                                    <li>Your password can't be too similar to your other personal information.</li>
+                                                    <li>Your password must contain at least 8 characters.</li>
+                                                    <li>Your password can't be a commonly used password.</li>
+                                                    <li>Your password can't be entirely numeric.</li>
+                                                </ul>
+                                            </span>
+                                            </div>
+                                            <div class="md-form mb-4">
+                                                <label data-error="wrong" data-success="right" for="orangeForm-pass">Staðfesta Lykilorð</label>
+                                                <i class="fas fa-lock prefix grey-text"></i>
+                                                {{ registerForm.password2 }}
+                                            </div>
 
 
 
-
-                                                </div>
-                                                <div class="modal-footer d-flex justify-content-center">
-                                                    <button class="btn buttonGreen" name="register">Staðfesta</button>
-                                                </div>
-                                            </form>
-                                        </div>
 
                                     </div>
-                                </div>
-                                    <div class="text-center">
-                                        <a href="" class="btn buttonGreen mb-4" data-toggle="modal" data-target="#modalRegisterForm" >
-                                        Búa til aðgang</a>
+                                    <div class="modal-footer d-flex justify-content-center">
+                                        <button class="btn buttonGreen" name="register">Staðfesta</button>
                                     </div>
+                                </form>
                             </div>
+
                         </div>
                     </div>
+                        <div class="text-center">
+                            <a href="" class="btn buttonGreen mb-4" data-toggle="modal" data-target="#modalRegisterForm" >
+                            Búa til aðgang</a>
+                        </div>
                 </div>
             </div>
-    {%  endblock %}
+        </div>
+    </div>
+</div>
+{%  endblock %}
 
