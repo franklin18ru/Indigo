@@ -26,7 +26,7 @@
 
 {% block content %}
 
-
+    <form method='GET' action='{% url 'property-index'  %}'>
     <div class="container">
         <div class="row searchProperties">
             <div class="col">
@@ -49,7 +49,7 @@
                                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                                     <label class="form-check-label" for="exampleCheck1">Velja allt</label><br>
                                                     {% for zone in reykjavik %}
-                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <input name='zip' value='{{ zone.zip }}' type="checkbox" class="form-check-input" id="exampleCheck1">
                                                         <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
                                                     {% endfor%}
                                                 </ul>
@@ -57,7 +57,7 @@
                                             <li><span class="toggle"> Kópavogur <span class="fas fa-angle-down dropArrow"></span> </span>
                                                 <ul class="nested">
                                                     {% for zone in kopavogur %}
-                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <input name='zip' value='{{ zone.zip }}' type="checkbox" class="form-check-input" id="exampleCheck1">
                                                         <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
                                                     {% endfor%}
                                                 </ul>
@@ -65,7 +65,7 @@
                                             <li><span class="toggle"> Garðabær <span class="fas fa-angle-down dropArrow"></span> </span>
                                                 <ul class="nested">
                                                     {% for zone in gardabaer %}
-                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <input name='zip' value='{{ zone.zip }}' type="checkbox" class="form-check-input" id="exampleCheck1">
                                                         <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
                                                     {% endfor%}
                                                 </ul>
@@ -73,7 +73,7 @@
                                             <li><span class="toggle"> Hafnarfjörður <span class="fas fa-angle-down dropArrow"></span> </span>
                                                 <ul class="nested">
                                                     {% for zone in hafnarfjordur %}
-                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <input name='zip' value='{{ zone.zip }}' type="checkbox" class="form-check-input" id="exampleCheck1">
                                                         <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
                                                     {% endfor%}
                                                 </ul>
@@ -81,7 +81,7 @@
                                             <li><span class="toggle"> Mosfellsbær <span class="fas fa-angle-down dropArrow"></span> </span>
                                                 <ul class="nested">
                                                     {% for zone in mosfellsbaer %}
-                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <input name='zip' value='{{ zone.zip }}' type="checkbox" class="form-check-input" id="exampleCheck1">
                                                         <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
                                                     {% endfor%}
                                                 </ul>
@@ -89,7 +89,7 @@
                                             <li><span class="toggle"> Seltjarnarnes <span class="fas fa-angle-down dropArrow"></span> </span>
                                                 <ul class="nested">
                                                     {% for zone in seltjarnarnes %}
-                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <input name='zip' value='{{ zone.zip }}' type="checkbox" class="form-check-input" id="exampleCheck1">
                                                         <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
                                                     {% endfor%}
                                                 </ul>
@@ -99,7 +99,7 @@
                                     <div> <span class="toggle capital"> Suðurnes <span class="fas fa-angle-down dropArrow"></span></span>
                                         <ul class="nested">
                                             {% for zone in sudurnes %}
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <input name='zip' value='{{ zone.zip }}' type="checkbox" class="form-check-input" id="exampleCheck1">
                                                 <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
                                             {% endfor%}
                                         </ul>
@@ -107,7 +107,7 @@
                                     <div> <span class="toggle capital"> Vestfirðir <span class="fas fa-angle-down dropArrow"></span></span>
                                         <ul class="nested">
                                             {% for zone in vestfirdir %}
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <input name='zip' value='{{ zone.zip }}' type="checkbox" class="form-check-input" id="exampleCheck1">
                                                 <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
                                             {% endfor%}
                                         </ul>
@@ -115,7 +115,7 @@
                                     <div> <span class="toggle capital"> Norðurland <span class="fas fa-angle-down dropArrow"></span></span>
                                         <ul class="nested">
                                             {% for zone in nordurland %}
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <input name='zip' value='{{ zone.zip }}' type="checkbox" class="form-check-input" id="exampleCheck1">
                                                 <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
                                             {% endfor%}
                                         </ul>
@@ -123,7 +123,7 @@
                                     <div> <span class="toggle capital"> Vesturland <span class="fas fa-angle-down dropArrow"></span></span>
                                         <ul class="nested">
                                             {% for zone in vesturland %}
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <input name='zip' value='{{ zone.zip }}' type="checkbox" class="form-check-input" id="exampleCheck1">
                                                 <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
                                             {% endfor%}
                                         </ul>
@@ -131,7 +131,7 @@
                                     <div> <span class="toggle capital"> Austurland <span class="fas fa-angle-down dropArrow"></span></span>
                                         <ul class="nested">
                                             {% for zone in austurland %}
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <input name='zip' value='{{ zone.zip }}' type="checkbox" class="form-check-input" id="exampleCheck1">
                                                 <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
                                             {% endfor%}
                                         </ul>
@@ -139,7 +139,7 @@
                                     <div> <span class="toggle capital"> Suðurland <span class="fas fa-angle-down dropArrow"></span></span>
                                         <ul class="nested">
                                             {% for zone in sudurland %}
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <input name='zip' value='{{ zone.zip }}' type="checkbox" class="form-check-input" id="exampleCheck1">
                                                 <label class="form-check-label" for="exampleCheck1">{{ zone.zip }} {{ zone.area }}</label><br>
                                             {% endfor%}
                                         </ul>
@@ -153,22 +153,22 @@
                     <div class="col-6">
                         <div class="col-md-6 price">
                             <div class="dropdown">
-                                <button class="btn dropdown-toggle searchButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Verð frá
-                                </button>
                                 <div class="searchButton priceFrom" aria-labelledby="dropdownMenuButton">
-                                    <ul class="dropdown-menu scrollable-menu" id="myUL">
-                                        <a class="dropdown-item" href="#">10 mkr.</a>
-                                        <a class="dropdown-item" href="#">20 mkr.</a>
-                                        <a class="dropdown-item" href="#">30 mkr.</a>
-                                        <a class="dropdown-item" href="#">40 mkr.</a>
-                                        <a class="dropdown-item" href="#">50 mkr.</a>
-                                        <a class="dropdown-item" href="#">60 mkr.</a>
-                                        <a class="dropdown-item" href="#">70 mkr.</a>
-                                        <a class="dropdown-item" href="#">80 mkr.</a>
-                                        <a class="dropdown-item" href="#">90 mkr.</a>
-                                        <a class="dropdown-item" href="#">100 mkr.</a>
-                                    </ul>
+                                    <select name='priceFrom' class="form-control dropdown-toggle searchButton">
+                                        <ul class="dropdown-menu scrollable-menu" id="myUL">
+                                            <option value="none">Verð frá</option>
+                                            <option value="10000000">10 mkr.</option>
+                                            <option value="20000000">20 mkr.</option>
+                                            <option value="30000000">30 mkr.</option>
+                                            <option value="40000000">40 mkr.</option>
+                                            <option value="50000000">50 mkr.</option>
+                                            <option value="60000000">60 mkr.</option>
+                                            <option value="70000000">70 mkr.</option>
+                                            <option value="80000000">80 mkr.</option>
+                                            <option value="90000000">90 mkr.</option>
+                                            <option value="100000000">100 mkr.</option>
+                                        </ul>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -176,27 +176,28 @@
 
                         <div class="col-md-6 price">
                             <div class="dropdown">
-                                <button class="btn dropdown-toggle searchButton rightButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Verð til
-                                </button>
                                 <div class="searchButton priceTo" aria-labelledby="dropdownMenuButton">
-                                    <ul class="dropdown-menu scrollable-menu" id="myUL">
-                                        <a class="dropdown-item" href="#">10 mkr.</a>
-                                        <a class="dropdown-item" href="#">20 mkr.</a>
-                                        <a class="dropdown-item" href="#">30 mkr.</a>
-                                        <a class="dropdown-item" href="#">40 mkr.</a>
-                                        <a class="dropdown-item" href="#">50 mkr.</a>
-                                        <a class="dropdown-item" href="#">60 mkr.</a>
-                                        <a class="dropdown-item" href="#">70 mkr.</a>
-                                        <a class="dropdown-item" href="#">80 mkr.</a>
-                                        <a class="dropdown-item" href="#">90 mkr.</a>
-                                        <a class="dropdown-item" href="#">100 mkr.</a>
-                                    </ul>
+                                    <select name='priceTo' class="form-control dropdown-toggle searchButton">
+                                        <ul class="dropdown-menu scrollable-menu" id="myUL">
+                                            <option value="none">Verð til</option>
+                                            <option value="10000000">10 mkr.</option>
+                                            <option value="20000000">20 mkr.</option>
+                                            <option value="30000000">30 mkr.</option>
+                                            <option value="40000000">40 mkr.</option>
+                                            <option value="50000000">50 mkr.</option>
+                                            <option value="60000000">60 mkr.</option>
+                                            <option value="70000000">70 mkr.</option>
+                                            <option value="80000000">80 mkr.</option>
+                                            <option value="90000000">90 mkr.</option>
+                                            <option value="100000000">100 mkr.</option>
+                                        </ul>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div class="col">
@@ -215,21 +216,21 @@
                                 Tegund
                             </button>
                             <div class="dropdown-menu searchButton" aria-labelledby="dropdownMenuButton" id="typeDropDown">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input type="checkbox"  value='Allt'  class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Velja allt</label><br>
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input name='type' value='Einbýli' type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Einbýli</label><br>
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input name='type' value='Fjölbýli' type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Fjölbýli</label>
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input name='type' value='Raðhús' type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Raðhús</label>
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input name='type' value='Parhús' type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Parhús</label>
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input name='type' value='Sumarhús' type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Sumarhús</label>
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input name='type' value='Atvinnuhús' type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Atvinnuhús</label>
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input name='type' value='Annað' type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Annað</label>
                             </div>
                         </div>
@@ -258,36 +259,36 @@
                                         <a class="dropdown-item" href="#">300 m²</a>
                                     </ul>
                                 </div>-->
-                                <select class="form-control dropdown-toggle searchButton">
-                                    <option value="five">Stærð frá</option>
-                                    <option value="one">10 m²</option>
-                                    <option value="two">20 m²</option>
-                                    <option value="three">40 m²</option>
-                                    <option value="four">60 m²</option>
-                                    <option value="five">80 m²</option>
-                                    <option value="five">100 m²</option>
-                                    <option value="five">150 m²</option>
-                                    <option value="five">200 m²</option>
-                                    <option value="five">250 m²</option>
-                                    <option value="five">300 m²</option>
+                                <select name='sizeFrom' class="form-control dropdown-toggle searchButton">
+                                    <option value="none">Stærð frá</option>
+                                    <option value="10">10 m²</option>
+                                    <option value="20">20 m²</option>
+                                    <option value="40">40 m²</option>
+                                    <option value="60">60 m²</option>
+                                    <option value="80">80 m²</option>
+                                    <option value="100">100 m²</option>
+                                    <option value="150">150 m²</option>
+                                    <option value="200">200 m²</option>
+                                    <option value="250">250 m²</option>
+                                    <option value="300">300 m²</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-6 price">
                             <div class="dropdown">
-                                <select class="form-control dropdown-toggle searchButton">
+                                <select name='sizeTo' class="form-control dropdown-toggle searchButton">
                                     <ul class="dropdown-menu scrollable-menu" id="myUL">
-                                    <option value="five">Stærð til</option>
-                                    <option value="one">10 m²</option>
-                                    <option value="two">20 m²</option>
-                                    <option value="three">40 m²</option>
-                                    <option value="four">60 m²</option>
-                                    <option value="five">80 m²</option>
-                                    <option value="five">100 m²</option>
-                                    <option value="five">150 m²</option>
-                                    <option value="five">200 m²</option>
-                                    <option value="five">250 m²</option>
-                                    <option value="five">300 m²</option>
+                                        <option value="none">Stærð til</option>
+                                        <option value="10">10 m²</option>
+                                        <option value="20">20 m²</option>
+                                        <option value="40">40 m²</option>
+                                        <option value="60">60 m²</option>
+                                        <option value="80">80 m²</option>
+                                        <option value="100">100 m²</option>
+                                        <option value="150">150 m²</option>
+                                        <option value="200">200 m²</option>
+                                        <option value="250">250 m²</option>
+                                        <option value="300">300 m²</option>
                                     </ul>
                                 </select>
                             </div>
@@ -306,8 +307,8 @@
                 <div class="row">
                     <div class="col">
                         <div class="input-group md-form form-sm form-2 pl-0">
-                            <input class="form-control searchType" type="text" placeholder="Leita eftir götuheiti..." aria-label="Leita eftir götuheiti">
-                            <button type="button" class="btn searchIcon">
+                            <input class="form-control searchType" name='streetName' type="text" placeholder="Leita eftir götuheiti..." aria-label="Leita eftir götuheiti">
+                            <button  type="submit" name='search' value='Testing' class="btn searchIcon">
                                 <i class="fas fa-search text-grey" aria-hidden="true"></i>
                             </button>
                         </div>
@@ -321,12 +322,13 @@
             <div class="col">
             </div>
             <div class="col">
-                <button type="button" class="btn searchBtn">Leita</button>
+                <button type="submit" name='search' value='Testing' class="btn searchBtn">Leita</button>
             </div>
             <div class="col">
             </div>
         </div>
     </div>
+    </form>
 
 
 
