@@ -3,7 +3,11 @@
         <img src="/static/images/person.jpg" alt="Person" style="width:100%">
         <div class="container">
             <h2>{{ realtor.name }}</h2>
-            <p class="title"> {{ realtor.positions }} </p>
+            <p class="title">
+            {% for position in realtor.positions.all %}
+                {{ position.name }}
+            {% endfor %}
+            </p>
             <p>{{ realtor.description }}</p>
             <p>{{ realtor.email }}</p>
             <p><button class="button">Hafa samband</button></p>
