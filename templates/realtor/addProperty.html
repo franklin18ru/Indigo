@@ -12,8 +12,14 @@
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
+               {% if errorMessages %}
+                    <div class='alert alert-danger'>
+                        {{ errorMessages.Error }}
+                    </div>
+               {% endif %}
             <form class="form form-horizontal" action="{% url 'property-addProperty' %}" method="post">
                 {% csrf_token %}
+
                 {{ form }}
 
                 <input type="submit" value="Create" class="btn btn-primary pull-right"/>

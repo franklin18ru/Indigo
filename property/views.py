@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404,redirect
 from django.db.models import Max
 from property.models import Properties
 from property.models import PropertyImage
+from property.models import PropertyZoneArea
 from django import forms
 from realtor.forms.propertyForm import PropertyCreateForm
 
@@ -51,19 +52,30 @@ def getPropertyById(request, id):
     })
 
 def createProperty(request):
+    context = {'form':PropertyCreateForm()}
     if request.method == 'POST':
+        print('postmethod')
         form = PropertyCreateForm(data=request.POST)
+        print(request.POST['zip'])
         if form.is_valid():
-            property = form.save()
+            form.save()
             propertyId = Properties.objects.order_by('-id')[0]
             propertyImage = PropertyImage(image=(request.POST['image']), propertyId_id=propertyId.id)
             propertyImage.save()
             return redirect('property-index')
-    else:
-        form = PropertyCreateForm()
-    return render(request, 'realtor/addProperty.html', {
-        'form': form
-    })
+        #     else:
+        #         errorMessages = {'Error': 'Þessi staður er ekki til!'}
+        #         print('Þessi staður er ekki til')
+        # else:
+        #     errorMessages = {'Error': 'Þetta póstfang er ekki til!'}
+        #     print('Þetta póstfang er ekki til!')
+    # try:
+    #     context['errorMessages'] = errorMessages
+    #
+    # except UnboundLocalError:
+    #     pass
+
+    return render(request, 'realtor/addProperty.html', context)
 
 
 # CHECK IN list
