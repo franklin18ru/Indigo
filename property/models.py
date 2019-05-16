@@ -24,6 +24,7 @@ class PropertyImage(models.Model):
     image = models.CharField(max_length=255)
 
 
+
 class PropertyZoneArea(models.Model):
     zip = models.CharField(max_length=3)
     area = models.CharField(max_length=255)
