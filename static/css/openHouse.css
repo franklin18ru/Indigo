@@ -2,12 +2,20 @@
     text-align: center;
 }
 
-.container {
+.adjustFooter {
     min-height: 80vh;
+}
+
+.adjustContent {
+    margin-top: 70px;
 }
 
 h1 {
     padding-top: 40px;
+}
+
+.logoDiv {
+    text-align: center;
 }
 
 .controls {
@@ -15,3 +23,14 @@ h1 {
     margin-right: 85px;
 }
 
+.buttonGreen {
+    margin-top: 10px;
+    background-color: #2eb8b8;
+    width: 30%;
+    padding: 3px 16px;
+    color:white;
+}
+
+.buttonGreen:hover {
+    color: #33787b;
+}
