@@ -6,4 +6,5 @@ urlpatterns = [
     path('staffRealtor', views.staffRealtor, name='staffRealtor-index'),
     path('openHouse', views.openHouse, name='openHouse-index')
 
+
 ]
