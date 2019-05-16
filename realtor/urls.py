@@ -5,5 +5,5 @@ from property.views import createProperty
 urlpatterns = [
     path('', views.index, name='realtor-index'),
     path('<int:id>', views.getPropertyByRealtorId, name='property-details'),
-    path('addProperty', createProperty, name= 'property-addProperty')
+    path('addproperty', createProperty, name= 'property-addProperty')
 ]
