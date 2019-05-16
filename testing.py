@@ -1,2 +1,0 @@
-def gunnar():
-    print("asd")
