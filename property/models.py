@@ -24,7 +24,6 @@ class PropertyImage(models.Model):
     propertyId = models.ForeignKey(Properties, on_delete=models.CASCADE)
     image = models.CharField(max_length=255)
 
-
 class PropertyZoneArea(models.Model):
     zip = models.CharField(max_length=3, default='NA')
     area = models.CharField(max_length=255)
