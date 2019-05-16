@@ -2,12 +2,16 @@ from django.forms import ModelForm, widgets
 from django import forms
 from property.models import Properties
 from django.utils.translation import ugettext_lazy as _
+from realtor.choices import *
 
 class PropertyCreateForm(ModelForm):
     image = forms.CharField(required=True, label='Mynd', widget=forms.TextInput(attrs={'class': 'form-control'}))
+    zone = forms.ChoiceField(choices=ZONE_CHOICES, required=True, label='Staður', widget=forms.Select(attrs={'class': 'form-control'}))
+    zip = forms.ChoiceField(choices=ZIP_CHOICES, required=True, label='Póst númer', widget=forms.Select(attrs={'class': 'form-control'}))
     class Meta:
         model = Properties
         exclude = ['id']
+
         widgets = {
             'streetName': widgets.TextInput(attrs={ 'class': 'form-control'}),
             'price': widgets.NumberInput(attrs={ 'class': 'form-control'}),
@@ -16,11 +20,9 @@ class PropertyCreateForm(ModelForm):
             'squareMeter': widgets.NumberInput(attrs={ 'class': 'form-control'}),
             'rooms': widgets.NumberInput(attrs={ 'class': 'form-control'}),
             'type': widgets.TextInput(attrs={ 'class': 'form-control'}),
-            'zip': widgets.TextInput(attrs={ 'class': 'form-control'}),
             'description': widgets.Textarea(attrs={ 'class': 'form-control'}),
             'shortDescription': widgets.Textarea(attrs={ 'class': 'form-control'}),
             'realtor': widgets.Select(attrs={ 'class': 'form-control'}),
-            'zone': widgets.TextInput(attrs={ 'class': 'form-control'}),
         }
         labels = {
             'streetName': _('Götuheiti'),
@@ -30,9 +32,24 @@ class PropertyCreateForm(ModelForm):
             'squareMeter': _('Fermetrar'),
             'rooms': _('Herbergi'),
             'type': _('Tegund'),
-            'zip': _('Póst númer'),
             'description': _('Lýsing'),
             'shortDescription': _('Stutt lýsing'),
             'realtor': _('Fasteignasali'),
-            'zone': _('Svæði'),
+
         }
+
+        fields=[
+            'streetName',
+            'price',
+            'propValue',
+            'fireInsurance',
+            'squareMeter',
+            'rooms',
+            'type',
+            'zone',
+            'zip',
+            'description',
+            'shortDescription',
+            'realtor',
+            'image'
+        ]

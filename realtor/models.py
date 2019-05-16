@@ -14,6 +14,8 @@ class Realtors(models.Model):
     password = models.CharField(max_length=255)
     positions = models.ManyToManyField(Positions)
 
+    def __str__(self):
+        return self.name
 
 class SoldProperty(models.Model):
     streetName = models.CharField(max_length=255)
