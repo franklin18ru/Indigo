@@ -8,3 +8,9 @@ def index(request):
 
 def offer(request):
     return render(request, 'property/offer.html')
+
+def paymentInfo(request):
+    return render(request, 'property/paymentInfo.html')
+
+def overview(request):
+    return render(request, 'property/overview.html')

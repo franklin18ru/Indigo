@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../static/css/send_offer.css">
 </head>
 <body>
+    <p class="title">Senda tilboð</p>
     <div class="container">
         <div class="row">
             <div class="col-3">
@@ -18,14 +19,13 @@
                     <p class="info">---POSTNÚMER OG STAÐUR---</p>
                     <img src="" alt="MYND :)">
                     <p class="info"><b>---VERÐ---</b></p>
-                    <p class="info"><img class="icon" src="../static/images/fm.png" alt="mynd">--UPPLÝSINGAR UM FERMETRA-- </p>
+                    <p class="info"><img class="icon" src="../static/images/fm.png" alt="mynd">--UPPL. UM FERMETRA-- </p>
                     <p class="info"><img class="icon" src="../static/images/herb.png" alt="mynd">--UPPLÝSINGAR UM HERB.FJ--</p>
                     <p class="info"><img class="icon" src="../static/images/tegund.png" alt="mynd">--TEGUND HÚSNÆÐIS--</p>
                 </div>
-                <button type="button" class="btn">Til baka</button>
+                <button type="button" class="btn-back" onclick="location.href='/property';">Til baka</button>
             </div>
             <div class="col-sm-5">
-                <p class="title">Senda tilboð</p>
                 <div class="row">
                     <div class="col-3">
                         <label for="prize" class="first-text">Upphæð</label><br>
@@ -236,8 +236,8 @@
                             <option>781 Höfn í Hornarfirði</option>
                             <option>785 Fagurhólsmýri</option>
                         </select>
+                        <input class="btn btn-submit" type="submit" value="Staðfesta" onclick="location.href='/property/paymentInfo';">
                     </div>
-                    <input class="btn btn-submit" type="submit" value="Staðfesta">
                 </div>
             </div>
         </div>
