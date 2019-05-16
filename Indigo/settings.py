@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user.apps.UserConfig',
     'realtor.apps.RealtorConfig',
     'property.apps.PropertyConfig',
     'userProfile.apps.UserprofileConfig',
@@ -136,6 +135,7 @@ STATICFILES_DIRS = [
 
 LOGIN_URL = '/login' #FIX TO GO TO LOGIN
 LOGIN_REDIRECT_URL = '/'
+STAFF_SVAEDI = '/realtor'
 
 LOGIN_EXEMPT_URL = [
     'password-reset/',
