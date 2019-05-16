@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/openHouse.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+            <div class="row">
+            <div class="col">
+            </div>
+            <div class="col logoDiv">
+                <img class="secondLogo" src="{% static 'images/logo2.png'%}">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+        </div>
+        <div class="container login-container adjustFooter">
+            <div class='alert alert-success adjustContent'>
+                Takk fyrir að hafa samband. Fyrirspurn þín hefur verið send!
+            </div>
+        </div>
+
+
+{% endblock %}
