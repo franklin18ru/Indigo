@@ -8,6 +8,18 @@ class PropertyCreateForm(ModelForm):
     image = forms.CharField(required=True, label='Mynd', widget=forms.TextInput(attrs={'class': 'form-control'}))
     zone = forms.ChoiceField(choices=ZONE_CHOICES, required=True, label='Staður', widget=forms.Select(attrs={'class': 'form-control'}))
     zip = forms.ChoiceField(choices=ZIP_CHOICES, required=True, label='Póst númer', widget=forms.Select(attrs={'class': 'form-control'}))
+    extra_field_count = forms.CharField(widget=forms.HiddenInput())
+
+    def __init__(self, *args, **kwargs):
+        extra_fields = kwargs.pop('extra', 0)
+
+        super(PropertyCreateForm, self).__init__(*args, **kwargs)
+        self.fields['extra_field_count'].initial = extra_fields
+        for index in range(int(extra_fields)):
+            # generate extra fields in the number specified via extra_fields
+            self.fields['extra_field_{index}'.format(index=index)] = \
+                forms.CharField()
+
     class Meta:
         model = Properties
         exclude = ['id']
@@ -38,7 +50,7 @@ class PropertyCreateForm(ModelForm):
 
         }
 
-        fields=[
+        fields = [
             'streetName',
             'price',
             'propValue',

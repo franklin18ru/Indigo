@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/realtor.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/singleProperty.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+<div class='container'>
+    <form method='POST'>
+        {% csrf_token %}
+        {{ form }}
+        <select name="position">
+            <option value="Framkvæmdarstjóri">Framkvæmdarstjóri</option>
+            <option value="Fjármálastjóri">Fjármálastjóri</option>
+            <option value="Fasteignasali">Fasteignasali</option>
+        </select>
+        <br>
+{#        {{ realtor.positions }}#}
+        <br><br>
+        <input type="submit" value="Create" class="btn btn-primary pull-right"/>
+    </form>
+</div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/multiSelector.js' %}"></script>
+{% endblock %}

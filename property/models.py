@@ -14,7 +14,7 @@ class Properties(models.Model):
     rooms = models.PositiveIntegerField()
     type = models.CharField(max_length=255)
     zip = models.CharField(max_length=3)
-    description = models.CharField(max_length=999)
+    description = models.CharField(max_length=2000)
     shortDescription = models.CharField(max_length=255)
     realtor = models.ForeignKey(Realtors, on_delete=models.CASCADE)
     zone = models.CharField(max_length=255, default="default")

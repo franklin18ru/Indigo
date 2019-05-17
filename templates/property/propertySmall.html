@@ -50,12 +50,15 @@
           <h3>{{ property.streetName }}</h3>
           <h5>{{ property.zip }} {{ property.zone }}</h5>
       </div>
+      {%  if user.is_staff %}
+      {% else %}
       <div class="col">
           <div class="float-right">
           <button type="button" class="btn btn-offer">SENDA TILBOÐ</button>
           <h3 class="thePrice">{{ property.price|floatformat }}</h3>
           </div>
       </div>
+      {% endif %}
   </div>
 </div>
 </div>
