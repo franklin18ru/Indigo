@@ -14,10 +14,7 @@ class Realtors(models.Model):
     password = models.CharField(max_length=255)
     positions = models.ManyToManyField(Positions)
     image = models.CharField(max_length=255)
-    def __str__(self):
-        return self.name
-
-
+    
     def __str__(self):
         return self.name
 

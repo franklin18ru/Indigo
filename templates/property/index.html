@@ -11,7 +11,7 @@
     <div class="row">
         {% if properties %}
         {% for property in properties %}
-            {% include 'property/singleProperty.html' with property=property %}
+            {% include 'property/singleProperty.html' with property=property favourites=favourites %}
         {% endfor %}
         {% else %}
             <div class="container" style="min-height: 80vh">
