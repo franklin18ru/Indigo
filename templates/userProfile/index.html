@@ -3,6 +3,7 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static  'css/userProfile.css' %}">
+    <link rel="stylesheet" href ="{% static 'css/singleProperty.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -32,7 +33,7 @@
             </div>
 
             <div class="col-4 buttonDiv">
-                <button type="button" class="btn float-right btnMyOffers"> <h5> Skoða mín tilboð </h5></button>
+
             </div>
         </div>
     </div>
@@ -44,22 +45,17 @@
     </div>
 
     <div class="container">
-      <div class="row">
-
-        <div class="col-4 leftClass">
-          <h3>Property 1</h3>
+        <div class="row" id="favProp">
+              {% for favourite in favourites %}
+                  <div class="col-4" id="singleFav">
+                 {% include 'property/singleProperty.html' with property=favourite %}
+                  </div>
+              {% endfor %}
         </div>
-
-        <div class="col-4 middleClass">
-            <h3>Property 2</h3>
-        </div>
-
-        <div class="col-4 rightClass">
-            <h3>Property 3</h3>
-            </button>
-        </div>
-      </div>
     </div>
+
+
+
 </div>
 {% endblock %}
 

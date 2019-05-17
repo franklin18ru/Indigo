@@ -1,10 +1,12 @@
-from django.shortcuts import render, get_object_or_404,redirect
+from django.shortcuts import render, get_object_or_404,redirect, HttpResponseRedirect
 from django.db.models import Max
 from property.models import Properties
 from property.models import PropertyImage
 from property.models import PropertyZoneArea
 from django import forms
 from realtor.forms.propertyForm import PropertyCreateForm
+from userProfile.models import Favourites
+from Indigo import settings
 
 # Create your views here.
 
@@ -42,7 +44,25 @@ def index(request):
         if len(zips) != 0:
             properties = properties.filter(zip__in=zips)
         # add search filtering here
-    context = {'properties': properties}
+
+    if request.method == 'POST':
+        if request.user.is_anonymous:
+            return HttpResponseRedirect(request.GET.get('next', settings.LOGIN_REDIRECT_URL))
+        propid = request.POST.get('fav')
+
+        if Favourites.objects.filter(user_id=request.user.pk, property_id=propid).exists():
+            unfav = Favourites.objects.get(user_id=request.user.pk, property_id=propid)
+            unfav.delete()
+        else:
+            Favourites.objects.create(user_id=request.user.pk, property_id=propid)
+
+    if request.user.is_anonymous:
+        context = {'properties': properties}
+    else:
+        query_set = Favourites.objects.filter(user_id=request.user.pk)
+        values = query_set.values('id', 'user', 'property')
+        print(values)
+        context = {'properties': properties, 'favourites': values}
     return render(request, 'property/index.html', context)
 
 def getPropertyById(request, id):

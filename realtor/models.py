@@ -12,7 +12,7 @@ class Realtors(models.Model):
     description = models.CharField(max_length=999)
     password = models.CharField(max_length=255)
     positions = models.ManyToManyField(Positions)
-    image = models.CharField(max_length=255)
+    image = models.CharField(max_length=255, default='img')
 
     def __str__(self):
         return self.name
