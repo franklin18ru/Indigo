@@ -99,10 +99,14 @@ body {
     margin-bottom:40px;
 }
 
-@media only screen and (max-width: 600px) {
-    #shortDescription {
-        display: none;
-    }
+.page-footer{
+    position: relative;
+    width:100% !important;
+    /*bottom:0;*/
+    z-index: 0;
+    display: block;
 }
+
+
 
 
