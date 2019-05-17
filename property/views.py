@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404,redirect
 from django.db.models import Max
 from property.models import Properties
 from property.models import PropertyImage
+from property.models import PropertyZoneArea
 from django import forms
 from realtor.forms.propertyForm import PropertyCreateForm
 
@@ -41,7 +42,6 @@ def index(request):
         if len(zips) != 0:
             properties = properties.filter(zip__in=zips)
         # add search filtering here
-
     context = {'properties': properties}
     return render(request, 'property/index.html', context)
 
@@ -51,19 +51,25 @@ def getPropertyById(request, id):
     })
 
 def createProperty(request):
+    context = {'form':PropertyCreateForm()}
     if request.method == 'POST':
         form = PropertyCreateForm(data=request.POST)
+        image = PropertyCreateForm(extra=request.POST.get('extra_field_count'))
         if form.is_valid():
-            property = form.save()
+            form.save()
             propertyId = Properties.objects.order_by('-id')[0]
             propertyImage = PropertyImage(image=(request.POST['image']), propertyId_id=propertyId.id)
             propertyImage.save()
+            print(request.POST['extra_field_count'])
+            for num in range(12):
+                try:
+                    (PropertyImage(image=request.POST['extra_field_'+str(num)], propertyId_id=propertyId.id)).save()
+                except Exception:
+                    continue
+
             return redirect('property-index')
-    else:
-        form = PropertyCreateForm()
-    return render(request, 'realtor/addProperty.html', {
-        'form': form
-    })
+
+    return render(request, 'realtor/addProperty.html', context)
 
 
 # CHECK IN list

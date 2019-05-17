@@ -20,7 +20,7 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{% static 'js/front.js' %}"></script>
+    <script src="{% static 'js/front.js' %}"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 {% endblock %}
 
@@ -153,46 +153,42 @@
                     <div class="col-6">
                         <div class="col-md-6 price">
                             <div class="dropdown">
-                                <div class="searchButton priceFrom" aria-labelledby="dropdownMenuButton">
-                                    <select name='priceFrom' class="form-control dropdown-toggle searchButton">
-                                        <ul class="dropdown-menu scrollable-menu" id="myUL">
-                                            <option value="none">Verð frá</option>
-                                            <option value="10000000">10 mkr.</option>
-                                            <option value="20000000">20 mkr.</option>
-                                            <option value="30000000">30 mkr.</option>
-                                            <option value="40000000">40 mkr.</option>
-                                            <option value="50000000">50 mkr.</option>
-                                            <option value="60000000">60 mkr.</option>
-                                            <option value="70000000">70 mkr.</option>
-                                            <option value="80000000">80 mkr.</option>
-                                            <option value="90000000">90 mkr.</option>
-                                            <option value="100000000">100 mkr.</option>
-                                        </ul>
-                                    </select>
-                                </div>
+                                <select name='priceFrom' class="form-control dropdown-toggle searchButton">
+                                    <ul class="dropdown-menu scrollable-menu" id="myUL">
+                                        <option value="none">Verð frá</option>
+                                        <option value="10000000">10 mkr.</option>
+                                        <option value="20000000">20 mkr.</option>
+                                        <option value="30000000">30 mkr.</option>
+                                        <option value="40000000">40 mkr.</option>
+                                        <option value="50000000">50 mkr.</option>
+                                        <option value="60000000">60 mkr.</option>
+                                        <option value="70000000">70 mkr.</option>
+                                        <option value="80000000">80 mkr.</option>
+                                        <option value="90000000">90 mkr.</option>
+                                        <option value="100000000">100 mkr.</option>
+                                    </ul>
+                                </select>
                             </div>
                         </div>
 
 
                         <div class="col-md-6 price">
                             <div class="dropdown">
-                                <div class="searchButton priceTo" aria-labelledby="dropdownMenuButton">
-                                    <select name='priceTo' class="form-control dropdown-toggle searchButton">
-                                        <ul class="dropdown-menu scrollable-menu" id="myUL">
-                                            <option value="none">Verð til</option>
-                                            <option value="10000000">10 mkr.</option>
-                                            <option value="20000000">20 mkr.</option>
-                                            <option value="30000000">30 mkr.</option>
-                                            <option value="40000000">40 mkr.</option>
-                                            <option value="50000000">50 mkr.</option>
-                                            <option value="60000000">60 mkr.</option>
-                                            <option value="70000000">70 mkr.</option>
-                                            <option value="80000000">80 mkr.</option>
-                                            <option value="90000000">90 mkr.</option>
-                                            <option value="100000000">100 mkr.</option>
-                                        </ul>
-                                    </select>
-                                </div>
+                                <select name='priceTo' class="form-control dropdown-toggle searchButton">
+                                    <ul class="dropdown-menu scrollable-menu" id="myUL">
+                                        <option value="none">Verð til</option>
+                                        <option value="10000000">10 mkr.</option>
+                                        <option value="20000000">20 mkr.</option>
+                                        <option value="30000000">30 mkr.</option>
+                                        <option value="40000000">40 mkr.</option>
+                                        <option value="50000000">50 mkr.</option>
+                                        <option value="60000000">60 mkr.</option>
+                                        <option value="70000000">70 mkr.</option>
+                                        <option value="80000000">80 mkr.</option>
+                                        <option value="90000000">90 mkr.</option>
+                                        <option value="100000000">100 mkr.</option>
+                                    </ul>
+                                </select>
                             </div>
                         </div>
                     </div>

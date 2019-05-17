@@ -12,48 +12,23 @@
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
-            <form class="form form-horizontal" action="{% url 'property-addProperty' %}" method="post">
+               {% if errorMessages %}
+                    <div class='alert alert-danger'>
+                        {{ errorMessages.Error }}
+                    </div>
+               {% endif %}
+            <form class="form form-horizontal" id="forms" action="{% url 'property-addProperty' %}" method="post">
                 {% csrf_token %}
-                {{ form }}
 
+                {{ form }}
                 <input type="submit" value="Create" class="btn btn-primary pull-right"/>
             </form>
+            <button class="btn" id="add-another">Bæta við annari mynd</button>
         </div>
         <div class="col-4"></div>
     </div>
 </div>
 
-{##}
-{#<div class="container-fluid">#}
-{#<div class="row">#}
-{#<div class=" col-3 after-add-more">#}
-{#    <div class="row">#}
-{#        <div class="form-group">#}
-{#            <label class="control-label">Mynd</label>#}
-{#            <input maxlength="200" type="text" class="form-control" placeholder="Hlekkur að mynd" name="lg_name[]" />#}
-{#            <div class="col-3 form-group change">#}
-{#                <label for="">&nbsp;</label><br/>#}
-{#                <a class="btn btn-success add-more">+ Bæta við mynd</a>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{##}
-{#</div>#}
-{#</div>#}
-{#<div class="row">#}
-{#    #}
-{#    <div class="col shortDetails">#}
-{##}
-{#        <div class="col leftInfo">#}
-{#      <div class="mainInfo">#}
-{##}
-{#      </div>#}
-{##}
-{#      </div>#}
-{#    </div>#}
-
-</div>
-</div>
 
 
 {% endblock %}
@@ -61,5 +36,4 @@
 {% block scripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{% static 'js/addProperty.js' %}"></script>
-
 {% endblock %}

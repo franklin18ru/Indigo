@@ -7,5 +7,6 @@ urlpatterns = [
     path('<int:id>', views.getPropertyByRealtorId, name='property-details'),
     path('addProperty', createProperty, name='property-addProperty'),
     path('createRealtor', views.createRealtor, name='realtor-createRealtor')
+    path('addproperty', createProperty, name= 'property-addProperty')
 
 ]

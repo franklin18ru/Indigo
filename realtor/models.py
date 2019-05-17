@@ -1,5 +1,4 @@
 from django.db import models
-from user.models import Users
 
 # Create your models here.
 
@@ -19,10 +18,12 @@ class Realtors(models.Model):
         return self.name
 
 
+    def __str__(self):
+        return self.name
+
 class SoldProperty(models.Model):
     streetName = models.CharField(max_length=255)
     zip = models.CharField(max_length=3)
     price = models.PositiveIntegerField()
     realtor = models.ForeignKey(Realtors, on_delete=models.CASCADE)
-    user = models.ForeignKey(Users, on_delete=models.CASCADE)
 
