@@ -1,6 +1,9 @@
 # Indigo
 Verklegt 2, 2019
 
+Það þarf að sækkja pip install áður en það er run-að kerfið:
+  pip install django-credit-cards
+
 Nokkur login: 
 
 -Superuser login (til að búa til nýjan fasteignasala):
