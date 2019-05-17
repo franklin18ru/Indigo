@@ -11,6 +11,11 @@
 .allProperties{
     margin-top:5%;
 
+
+}
+
+html, body{
+    height:100vmax !important;
 }
 
 .properties{
