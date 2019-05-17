@@ -34,6 +34,11 @@ html {
     clear: both;
     display: table;
 }
+.realtorImg{
+    width: 100%;
+    height: auto;
+
+}
 
 .title {
     color: grey;
