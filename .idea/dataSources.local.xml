@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="PostgreSQL - wkpszilp@balarama.db.elephantsql.com" uuid="6eb77b89-79b4-44b9-8949-29978a86e5c4">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+    <data-source name="wkpszilp@balarama.db.elephantsql.com" uuid="e5c8be6e-3106-4a30-b57b-e70042f37d69">
+      <database-info product="PostgreSQL" version="11.2 (Ubuntu 11.2-1.pgdg18.04+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="11.2" exact-driver-version="42.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>wkpszilp</user-name>
+      <introspection-schemas>@:@</introspection-schemas>
     </data-source>
   </component>
 </project>

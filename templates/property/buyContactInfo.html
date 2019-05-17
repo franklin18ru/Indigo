@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/openHouse.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container adjustFooter">
+        <h1>Kaupa eign</h1>
+        <p>Skref 1 af 3</p>
+        <form class="form form-horizontal" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <a type="submit" class="btn btnSubmit buttonGreen" href="{{ property.id }}/paymentInfo">Fara á næsta skref</a>
+        </form>
+    </div>
+{% endblock %}

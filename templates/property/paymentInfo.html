@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/openHouse.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container adjustFooter">
+        <h1>Kaupa eign</h1>
+        <p>Skref 2 af 3</p>
+        <form class="form form-horizontal" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn btnSubmit buttonGreen">Hætta við</button>
+            <button type="submit" class="btn btnSubmit buttonGreen">Fara á næsta skref</button>
+        </form>
+    </div>
+{% endblock %}

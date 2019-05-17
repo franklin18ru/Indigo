@@ -5,6 +5,7 @@ from django.shortcuts import render
 from realtor.models import Realtors
 from .forms import ContactForm
 
+
 def index(request):
     return render(request, 'aboutUs/aboutUs.html')
 
@@ -21,7 +22,7 @@ def openHouse(request):
             name = request.POST['name']
             email = request.POST['email']
             message = request.POST['message']
-            sent = 'Netfang: ' + email +'\n' + 'Nafn: ' + str(name) + '\n' + 'skilaboð: ' + str(message)
+            sent = 'Netfang: ' + email + '\n' + 'Nafn: ' + str(name) + '\n' + 'skilaboð: ' + str(message)
 
             send_mail('Ný fyrirspurn frá indigofasteignir.is',
                       sent,
@@ -33,4 +34,3 @@ def openHouse(request):
         form = ContactForm()
 
     return render(request, 'aboutUs/openHouse.html', {'form': form})
-

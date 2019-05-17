@@ -5,6 +5,7 @@ from property.models import PropertyImage
 from property.models import PropertyZoneArea
 from django import forms
 from realtor.forms.propertyForm import PropertyCreateForm
+from .forms import buyStepOneForm
 
 # Create your views here.
 
@@ -45,10 +46,12 @@ def index(request):
     context = {'properties': properties}
     return render(request, 'property/index.html', context)
 
+
 def getPropertyById(request, id):
     return render(request, 'property/property.html', {
         'property': get_object_or_404(Properties, pk=id),
     })
+
 
 def createProperty(request):
     context = {'form':PropertyCreateForm()}
@@ -88,3 +91,31 @@ def createProperty(request):
 
 # GET LIST OF CHECKED CHECKBOXES
 # request.POST.getlist('recommendations')
+
+
+def buyStepOne(request, id):
+    if request.method == 'POST':
+        form = buyStepOneForm(data=request.POST)
+        if form.is_valid():
+            buyer = form.save()
+            return render(request, 'property/paymentInfo.html')
+    else:
+        form = buyStepOneForm()
+
+    return render(request, 'property/buyContactInfo.html', {'form': form})
+
+
+def paymentForm(request):
+    if request.method == "POST":
+        form = paymentForm(data=request.POST)
+        if form.is_valid():
+
+            return render(request, 'property/paymentInfo.html')
+    else:
+        form = paymentForm()
+
+    return render(request, 'property/buyContactInfo.html', {'form': form})
+
+
+def reviewForm(request):
+    pass
