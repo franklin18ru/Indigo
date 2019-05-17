@@ -54,26 +54,21 @@ def getPropertyById(request, id):
 def createProperty(request):
     context = {'form':PropertyCreateForm()}
     if request.method == 'POST':
-        print('postmethod')
         form = PropertyCreateForm(data=request.POST)
-        print(request.POST['zip'])
+        image = PropertyCreateForm(extra=request.POST.get('extra_field_count'))
         if form.is_valid():
             form.save()
             propertyId = Properties.objects.order_by('-id')[0]
             propertyImage = PropertyImage(image=(request.POST['image']), propertyId_id=propertyId.id)
             propertyImage.save()
+            print(request.POST['extra_field_count'])
+            for num in range(12):
+                try:
+                    (PropertyImage(image=request.POST['extra_field_'+str(num)], propertyId_id=propertyId.id)).save()
+                except Exception:
+                    continue
+
             return redirect('property-index')
-        #     else:
-        #         errorMessages = {'Error': 'Þessi staður er ekki til!'}
-        #         print('Þessi staður er ekki til')
-        # else:
-        #     errorMessages = {'Error': 'Þetta póstfang er ekki til!'}
-        #     print('Þetta póstfang er ekki til!')
-    # try:
-    #     context['errorMessages'] = errorMessages
-    #
-    # except UnboundLocalError:
-    #     pass
 
     return render(request, 'realtor/addProperty.html', context)
 
