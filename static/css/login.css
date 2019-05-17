@@ -41,9 +41,10 @@ p {
 }
 
 .container-fluid {
-    padding: 5rem;
-    margin: 10em;
+    padding: 6rem;
+    /*margin: 10em;*/
 }
+
 #button {
     background-color: #505666;
     /*border: 5px solid #505666;*/

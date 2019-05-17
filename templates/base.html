@@ -18,6 +18,8 @@
 
 </head>
 <body>
+<div class="allContent">
+<div class="content">
 <nav class="navbar navbar-dark navbar-expand-lg navbar-inverse navbar-custom font-weight-bold" id="navbar">
   <a class="navbar-brand ml-5" href="{% url 'frontpage-index' %}">
       <img class="logo" src="{% static 'images/logo.png' %}" alt="INDIGO Fasteignir">
@@ -51,11 +53,11 @@
     </ul>
   </div>
 </nav>
-
-
+<div class="content">
  {% block content %}
 
  {% endblock %}
+</div>
 
 <!-- Footer -->
 <footer class="page-footer font-small blue pt-4">
@@ -102,6 +104,8 @@
 </div>
 
 </footer>
+</div>
+</div>
 </body>
 
 
