@@ -60,3 +60,11 @@ h1 {
     text-align: center;
     margin: 30px;
 }
+
+.page-footer{
+    position: relative;
+    width:100% !important;
+    /*bottom:0;*/
+    z-index: 0;
+    display: block;
+}
