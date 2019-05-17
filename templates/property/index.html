@@ -9,9 +9,31 @@
 {% block content %}
     <div class="container-fluid allProperties">
     <div class="row">
+        {% if properties %}
         {% for property in properties %}
             {% include 'property/singleProperty.html' with property=property %}
         {% endfor %}
+        {% else %}
+            <div class="container" style="min-height: 80vh">
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <h1>Engar niðurstöður fundust!</h1>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row"> .</div>
+                <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-2">
+                        <a href="{% url 'frontpage-index' %}" class="btn btn-info" role="button">
+                            Til baka í leitarvél
+                        </a>
+                    </div>
+                    <div class="col-5"></div>
+                </div>
+            </div>
+        {% endif %}
     </div>
     </div>
 {% endblock %}

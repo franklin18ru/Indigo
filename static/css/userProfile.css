@@ -90,3 +90,7 @@ body {
     background-color: rgba(196, 196, 196, 0.47);
     border-radius: 2px;
 }
+
+.adjustFooter {
+    min-height: 60vh !important;
+}

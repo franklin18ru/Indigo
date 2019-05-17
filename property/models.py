@@ -1,6 +1,7 @@
 from django.db import models
 from realtor.models import Realtors
 
+
 # Create your models here.
 
 
@@ -23,9 +24,7 @@ class PropertyImage(models.Model):
     propertyId = models.ForeignKey(Properties, on_delete=models.CASCADE)
     image = models.CharField(max_length=255)
 
-
 class PropertyZoneArea(models.Model):
-    zip = models.CharField(max_length=3)
+    zip = models.CharField(max_length=3, default='NA')
     area = models.CharField(max_length=255)
-    region = models.CharField(max_length=255)
-
+    region = models.CharField(max_length=255, default='NA')
