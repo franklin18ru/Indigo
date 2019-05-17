@@ -55,6 +55,8 @@
         <p> Fasteignamat: <span class="ml-3">{{ property.propValue }}</span></p>
         <p id="shortDescription">{{ property.shortDescription }}</p>
     </div>
+            {%  if user.is_staff %}
+            {% else %}
              <div class="col">
                   <div class="">
                       <h3 class="thePrice">{{ property.price|floatformat }}</h3>
@@ -62,6 +64,7 @@
                   </div>
 
             </div>
+            {% endif %}
     </div>
 </div>
 <div class="row">

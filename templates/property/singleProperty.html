@@ -19,9 +19,12 @@
             </div>
             <div class="col mt-2 rightSide">
                 <button class="btn float-right propertyBtn">Skoða</button>
-                <button type="button" class="btn btn-light border-dark favoriteIcon">
-                    <i class="fa fa-heart"></i>
-                </button>
+                {%  if user.is_staff %}
+                {% else %}
+                    <button type="button" class="btn btn-light border-dark favoriteIcon">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                {% endif %}
             </div>
         </div>
         </div>

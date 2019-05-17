@@ -13,34 +13,48 @@
     <div class="container">
     <div class="row">
         <div class="col-3">
-            <img src="../static/images/profilePicFlower.jpg" class="img-responsive" alt="profilePicture" width="170" height="250">
-            <p>Fasteignasali Fasteignason</p>
-            <button type="submit" class="btn btn-lg btn-block">Breyta mynd</button>
+            <img src="{{ realtor.image }}" class="img-responsive" alt="profilePicture" width="200" height="200">
+            <p>{{ realtor.name }}</p>
+{#            <button type="submit" class="btn btn-lg btn-block">Breyta mynd</button>#}
         </div>
 
         <div class="col-6">
             <div class="container">
                  <div class="row justify-content-center">
+                    <form method='POST'>
                      <div class="col">
                          <div class="contact-form">
-
-                             <select id="example-xss" multiple="multiple">
-                              <option value="" disabled selected>Veldu stöðu/r</option>
-                              <option value="1">{{ realtor.name }}</option>
-                              <option value="2">Germany</option>
-                              <option value="3">France</option>
-                              <option value="4">Poland</option>
-                              <option value="5">Japan</option>
-                            </select>
-                            <button class="btn-save btn btn-primary btn-sm">Save</button>
-
+                                {% csrf_token %}
+{#                             <select id="example-xss" multiple="multiple">#}
+{#                              <option value="" disabled selected>Veldu stöðu/r</option>#}
+{#                              <option value="1">{{ realtor.email }}</option>#}
+{#                              <option value="2">Germany</option>#}
+{#                              <option value="3">France</option>#}
+{#                              <option value="4">Poland</option>#}
+{#                              <option value="5">Japan</option>#}
+{#                            </select>#}
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="email">Staða:</label><br>
+                                 <span class="form-control"   id="positions">
+                                     {% for position in realtor.positions.all %}{{ position.name }} {% endfor %}
+                                 </span>
+{#                                {{ form.positions }}#}
+{#                            <button class="btn-save btn btn-primary btn-sm">Save</button>#}
+                            </div>
                              <div class="form-group">
                                  <label class="control-label col-sm-2" for="email">Netfang:</label>
-                                 <input type="email" class="form-control" id="email" placeholder="fasteign@fasteign.is">
+                                 {{ form.email }}
+{#                                 <input type="email" class="form-control" id="email" value='{{ realtor.email }}'>#}
+                             </div>
+                                <div class="form-group">
+                                 <label class="control-label col-sm-2" for="email">Mynd:</label>
+                                 {{ form.image }}
+{#                                 <input type="email" class="form-control" id="email" value='{{ realtor.email }}'>#}
                              </div>
                              <div class="form-group">
                                  <label class="control-label col-sm-2" for="description">Lýsing:</label>
-                                 <textarea class="form-control" rows="4" id="description"></textarea>
+                                 {{ form.description }}
+{#                                 <textarea class="form-control" rows="4" id="description">{{ realtor.description }}</textarea>#}
                              </div>
                              <div class="form-group">
                                <div class="col-sm-offset-2 col-sm-10">
@@ -49,12 +63,13 @@
                              </div>
                          </div>
                      </div>
+                    </form>
                  </div>
             </div>
         </div>
 
         <div class="col-3" >
-            <button type="submit" class="btn btn-lg btn-block" id="button1">Bæta við eign</button>
+            <a style="color:white;" class='btn btn-lg btn-block' href='{% url 'property-addProperty' %}'>Bæta við eign</a>
         </div>
     </div>
     </div>
