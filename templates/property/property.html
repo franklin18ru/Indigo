@@ -55,16 +55,18 @@
         <p> Fasteignamat: <span class="ml-3">{{ property.propValue }}</span></p>
         <p id="shortDescription">{{ property.shortDescription }}</p>
     </div>
-            {%  if user.is_staff %}
-            {% else %}
+
              <div class="col">
                   <div class="">
                       <h3 class="thePrice">{{ property.price|floatformat }}</h3>
-                      <button type="button" class="btn btn-offer">SENDA TILBOÐ</button>
+                      {%  if user.is_staff %}
+                      {% else %}
+                          <a href="{{ property.id }}/buyProperty" type="button" class="btn btn-offer">KAUPA EIGN</a>
+                      {% endif %}
                   </div>
 
             </div>
-            {% endif %}
+
     </div>
 </div>
 <div class="container-fluid">

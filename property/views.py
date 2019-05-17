@@ -7,6 +7,8 @@ from django import forms
 from realtor.forms.propertyForm import PropertyCreateForm
 from userProfile.models import Favourites
 from Indigo import settings
+from .forms import buyStepOneForm, PaymentForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -92,14 +94,30 @@ def createProperty(request):
     return render(request, 'realtor/addProperty.html', context)
 
 
-# CHECK IN list
-# my_model.objects.filter(creator__in=creator_list)
+@login_required
+def buyStepOne(request, id):
+    if request.method == 'POST':
+        if 'info' in request.POST:
+            cform = buyStepOneForm(data=request.POST)
+            pForm = PaymentForm(data=request.POST)
+            if cform.is_valid() and pForm.is_valid():
+                buyer = cform
+                personalInfo = pForm
+                buyer.save()
 
-# my_filter_qs = Q()
-# for creator in creator_list:
-#     my_filter_qs = my_filter_qs | Q(creator=creator)
-# my_model.objects.filter(my_filter_qs)
+                return render(request, 'property/buyContactInfo.html',
+                              {'buyer': buyer, 'personalInfo': personalInfo, 'review': True})
+
+        if 'buy' in request.POST:
+            propTodel = Properties.objects.get(pk=id)
+            propTodel.delete()
+            return HttpResponseRedirect(request.GET.get('next', settings.LOGIN_REDIRECT_URL))
+    else:
+        ContactForm = buyStepOneForm()
+        paymentForm = PaymentForm()
 
 
-# GET LIST OF CHECKED CHECKBOXES
-# request.POST.getlist('recommendations')
+        return render(request, 'property/buyContactInfo.html', {'contactForm': ContactForm ,'paymentForm': paymentForm, 'info': True})
+
+
+

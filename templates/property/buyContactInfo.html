@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/openHouse.css' %}">
+{% endblock %}
+
+{% block content %}
+        {% if info %}
+            <form class="form form-horizontal" method="POST">
+                {% csrf_token %}
+                <div class="container adjustFooter">
+                    <h1>Kaupa eign</h1>
+                    <p>Skref 1 af 3</p>
+                        {{ contactForm }}
+
+
+
+
+                    <p>Skref 2 af 3</p>
+
+                        {{ paymentForm }}
+
+                    <button type="submit" name="info" class="btn btnSubmit buttonGreen">Staðfesta</button>
+                </div>
+            </form>
+        {% elif review %}
+            <div class="container adjustFooter">
+                <h1>Review</h1>
+                <p>Skref 3 af 3</p>
+                <p>Nafn : <b>{{ buyer.nameClean }}</b></p>
+                <p>Kenntitala: <b>{{ buyer.ssnClean }}</b></p>
+                <p>Netfang: <b>{{ buyer.emailClean }}</b></p>
+                <p>Póst númer: <b>{{ buyer.zipClean }}</b></p>
+                <p>Land: <b>{{ buyer.countryClean }}</b></p>
+                <p>card number : {{ personalInfo.cc_number }}</p>
+                <p>Expiration Date: {{ personalInfo.cc_expiry }}</p>
+                <p>CVV/CVC: {{ personalInfo.cc_code }}</p>
+                <form method='POST'>
+                    {% csrf_token %}
+                    <button type="submit" name="buy" class="btn btnSubmit buttonGreen">Staðfesta</button>
+                </form>
+            </div>
+        {% endif %}
+{% endblock %}
