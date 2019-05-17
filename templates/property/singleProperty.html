@@ -21,9 +21,30 @@
                 <button class="btn float-right propertyBtn">Skoða</button>
                 {%  if user.is_staff %}
                 {% else %}
-                    <button type="button" class="btn btn-light border-dark favoriteIcon">
-                        <i class="fa fa-heart"></i>
-                    </button>
+
+
+
+                    {% if favourite %}
+
+                            <form method="POST">
+                                {% csrf_token %}
+                                <button type="submit" name="fav" value="{{ property.id }}" class="btn btn-light border-dark favoriteIcon">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </form>
+
+                    {%  else %}
+
+                        <form method="POST">
+                            {% csrf_token %}
+                            <button type="submit" name="fav" value="{{ property.id }}" class="btn btn-light border-dark favoriteIcon">
+                                <i class="fa fa-heart"></i>
+                            </button>
+                        </form>
+
+                    {% endif %}
+
+
                 {% endif %}
             </div>
         </div>
